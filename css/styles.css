@@ -1,0 +1,53 @@
+body, margin {
+  margin: 0;
+  padding: 0;
+}
+
+#intro-photo {
+  background: url("../img/escape.jpg") no-repeat, 50% 50%;
+  height: 100%;
+  width: 100%;
+  height: 100vh;
+  display: table;
+  top: 0;
+  background-size: cover;
+}
+
+h1 {
+  color: #FFF;
+  text-align: center;
+  display: inline-block;
+  padding: 25%;
+  font-family:skia;
+  font-weight: bolder;
+  font-size: 8em;
+  font-weight:200;
+}
+
+.item {
+  -webkit-animation-duration: 3s;
+  -webkit-animation-iteration-count: 4;
+}
+
+.start-button {
+  background: rgba(0,0,0,0.2);
+  text-align: center;
+  width: 250px;
+  height: 250px;
+  border-radius: 100%;
+  border-color: #fff;
+  border-width: thick;
+  display: inline-block;
+  font-size: 55px;
+  vertical-align: middle;
+  color: #FFF;
+  text-decoration: none
+}
+
+.narrative {
+  background-image: url(../img/div-bg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 10%;
+  color: #FFF;
+}
