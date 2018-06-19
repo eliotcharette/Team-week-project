@@ -2,6 +2,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Source Sans Pro",sans-serif;
+  color: #FFF;
 }
 
 #intro-photo {
@@ -178,6 +179,7 @@ $base-color:$green ;
   @include clear;
   width:100%;
   margin:0 auto;
+  color: black;
 }
 
 canvas{
