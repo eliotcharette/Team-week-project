@@ -53,7 +53,13 @@ section {
 
 #start-button:hover {
   color: rgba(0,0,0,0.0);
-  background-image: url(../img/play-button.png);
+  background-image: url(../img/play-button-4.png);
+  background-size: cover;
+  cursor: pointer;
+}
+
+#start-button:focus {
+  outline: 0;
 }
 
 .narrative {
