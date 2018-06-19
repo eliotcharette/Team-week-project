@@ -31,8 +31,12 @@ var slamDoor = new Audio("audio/close_door.mp3");
 var creakingDoor = new Audio("audio/squeaking_door.mp3");
 
 
-//Hangman Game//
-window.onload = function () {
+//Hangman Game
+// window.onload = function () {
+function startHangman() {
+  $(".wrapper").show();
+  $('html, body').animate({scrollTop:$(document).height()
+  }, 'slow');
 
   var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
         'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',

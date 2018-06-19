@@ -99,7 +99,7 @@ section {
   padding: 25%;
 }
 
-#button-rm3 {
+#start-hangman {
   font-size: 75px;
   color: rgba(0,0,0,0.5);
 }
@@ -162,7 +162,8 @@ $base-color:$green ;
   -khtml-border-radius: $radius;
 }
 
-body {
+.wrapper {
+  display: none;
   background:$base-color;
   font-family: "Source Sans Pro",sans-serif;
   /* font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; */
@@ -170,14 +171,10 @@ body {
   height:100%;
   text-align:center;
   font-size:22px;
-}
-
-.wrappper{
   @include clear;
   width:100%;
   margin:0 auto;
 }
-
 
 canvas{
   color:$white;
@@ -275,7 +272,9 @@ button{
   border-color: #00b3b4;
   border-style: solid;
   border-width: thick;
-  background-color: rgba(0,0,0,0.1)
+  background-color: rgba(0,0,0,0.1);
+  margin-left: 2.5%;
+  margin-right: 2.5%;
 
     /* &:hover{
       @include transition;
