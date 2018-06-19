@@ -30,7 +30,6 @@ function clickRoomOne(event) {
 var slamDoor = new Audio("audio/close_door.mp3");
 var creakingDoor = new Audio("audio/squeaking_door.mp3");
 
-<<<<<<< HEAD
 
 //Hangman Game//
 window.onload = function () {
@@ -218,8 +217,8 @@ window.onload = function () {
   // Play
   play = function () {
     categories = [
-        ["columbia", "portugal", "argentina","brasil", "spain", "belgium", "germany"],
-        ["chupacabra", "zombie", "yeti", "mummy", "vampire", "werewolf", "godzilla"],
+        ["colombia", "portugal", "argentina","brasil", "spain", "belgium", "germany"],
+        ["chupacabra", "zombie", "bigfoot", "mummy", "vampire", "werewolf", "godzilla"],
         ["github", "constuctor", "bootstrap", "javascript", "prototypes", "looping", "function"]
     ];
 
@@ -247,7 +246,7 @@ window.onload = function () {
 
       hints = [
         ["The Coffee Growers", "The Navigators", "The White and Sky-Blue", "Little Canary", "The Red One", "The Red Devils", "The October Fest"],
-        ["Mexican myth or vampiric creature", "Corpse without soul", "Abominable Snowman", "Ancient Egyptian monster", "Blood drinking monster", "Man turns into animal", "A Japanese monster"],
+        ["Mexican myth or vampiric creature", "Walking corpse without soul", "Harry elusive giant", "Ancient Egyptian corpse", "Blood drinking fanged creature", "Man turns into beast during fullmoon", "A monster of Japanese origin"],
         ["Create repositories and stores codes", "A function that can be invoked to create new objects", "Front-end framework", "Programming language used to make web pages interactive", "Is an object from which other objects inherit methods", "Repeating the same block of code until it is specified to stop", "Block of code that performs an action and returns a result" ]
     ];
 
@@ -266,7 +265,7 @@ window.onload = function () {
     play();
   }
 }
-=======
+
 function startGame(event) {
   slamDoor.play();
   setTimeout(function() {
@@ -280,4 +279,3 @@ function toRoomOne(event) {
   $("#room-one").fadeIn(2000);
   $("#narrative-one").hide();
 };
->>>>>>> 02b61150fa3daa38702d68acefb1bf211f1c8ae9
