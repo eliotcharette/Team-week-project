@@ -20,6 +20,7 @@ function clickRoomOne(event) {
   };
 
   if(cX > 495 && cX < 645 && cY > 160 && cY < 370){
+    $("#rm-one-message").show();
     $("#form-wifi").show();
     $('#rm-one-message').text("Enter Wifi Password:");
     $('html, body').animate({scrollTop:$(document).height()}, 'fast');
