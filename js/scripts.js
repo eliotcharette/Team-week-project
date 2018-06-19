@@ -3,6 +3,7 @@ function showCoords1(event) {
   var cY = event.clientY;
   var coords1 = "client - X: " + cX + ", Y coords: " + cY;
   $('#rm-one-message').text(coords1);
+  $("#rm-one-message").show();
 };
 
 function clickRoomOne(event) {
@@ -19,6 +20,14 @@ function clickRoomOne(event) {
     $("#rm-one-message").show();
     $("#form-wifi").show();
     $('#rm-one-message').text("Enter Wifi Password:");
+    $('html, body').animate({scrollTop:$(document).height()}, 'fast');
+  };
+
+  if(cX > 385 && cX < 300 && cY > 300 && cY < 575){
+    $("#rm-one-message").show();
+    $("#form-wifi").hide();
+    $("#email").hide();
+    $('#rm-one-message').text("You found the spare key!")
     $('html, body').animate({scrollTop:$(document).height()}, 'fast');
   };
 }
@@ -311,3 +320,17 @@ var x = setInterval(function() {
 function makeMeTwoDigits(n){
     return (n < 10 ? "0" : "") + n;
 }
+
+$(document).ready(function(){
+  $("#form-wifi").submit(function(event){
+    event.preventDefault();
+    var wifiPassword = $("input#wifi").val();
+    if(wifiPassword === "LoveYourClassmates"){
+      $("#email").show();
+      $('html, body').animate({scrollTop:$(document).height()}, 'fast');
+    } else {
+      $("#rm-one-message").text("Please enter the correct password!");
+    };
+    return false;
+  });
+});
