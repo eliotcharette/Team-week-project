@@ -5,9 +5,9 @@ body, margin {
 
 #intro-photo {
   background: url("../img/escape.jpg") no-repeat, 50% 50%;
-  height: 100%;
+  /* height: 100%;
   width: 100%;
-  height: 100vh;
+  height: 100vh; */
   display: table;
   top: 0;
   background-size: cover;
