@@ -16,6 +16,7 @@ function clickRoomOne(event) {
   };
 
   if(cX > 495 && cX < 645 && cY > 160 && cY < 370){
+    debugger;
     $("#rm-one-message").show();
     $("#form-wifi").show();
     $('#rm-one-message').text("Enter Wifi Password:");
@@ -311,3 +312,17 @@ var x = setInterval(function() {
 function makeMeTwoDigits(n){
     return (n < 10 ? "0" : "") + n;
 }
+
+$(document).ready(function(){
+  $("#form-wifi").submit(function(event){
+    event.preventDefault();
+    var wifiPassword = $("input#wifi").val();
+    if(wifiPassword === "LoveYourClassmates"){
+      $("#email").show();
+      $('html, body').animate({scrollTop:$(document).height()}, 'fast');
+    } else {
+      $("#rm-one-message").text("Please enter the correct password!");
+    };
+    return false;
+  });
+});
