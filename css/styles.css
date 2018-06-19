@@ -1,20 +1,14 @@
-body {
-  margin: 0;
-  padding: 0;
-  font-family: "Source Sans Pro",sans-serif;
-  color: #FFF;
+.item {
+  -webkit-animation-duration: 10s;
+  -webkit-animation-iteration-count: 4;
 }
 
-#intro-photo {
-  background: url("../img/escape.jpg") no-repeat, 50% 50%;
-  height: 100%;
-  width: 100%;
-  height: 100vh;
-  display: table;
-  top: 0;
-  background-size: cover;
-  background-color: black;
+body {
   color: #FFF;
+  font-family: "Source Sans Pro",sans-serif;
+  background-color: black;
+  margin: 0;
+  padding: 0;
 }
 
 h1 {
@@ -33,9 +27,8 @@ h1 {
   background-size: cover;
 }
 
-.item {
-  -webkit-animation-duration: 10s;
-  -webkit-animation-iteration-count: 4;
+section {
+  text-align: center;
 }
 
 #start-button {
@@ -53,10 +46,6 @@ h1 {
   text-decoration: none
 }
 
-section {
-  text-align: center;
-}
-
 #start-button:hover {
   color: rgba(0,0,0,0.0);
   background-image: url(../img/play-button-4.png);
@@ -64,7 +53,7 @@ section {
   cursor: pointer;
 }
 
-#start-button:focus {
+button:focus {
   outline: 0;
 }
 
@@ -75,26 +64,6 @@ section {
   padding: 10%;
   font-size: 2em;
   font-family: "Source Sans Pro",sans-serif;
-}
-
-.room-three {
-  background-image: url('../img/dungeon.jpg');
-  height: 100%;
-  width: 100%;
-  height: 100vh;
-  display: table;
-  top: 0;
-  background-size: cover;
-  vertical-align: bottom;
-  color: #FFF;
-  font-size: 30px;
-  text-align: center;
-  padding: 25%;
-}
-
-#start-hangman {
-  font-size: 75px;
-  color: rgba(0,0,0,0.5);
 }
 
 #countdown {
@@ -109,8 +78,67 @@ section {
   color: red;
 }
 
+.hide-area {
+  display: none;
+}
+
+.continue {
+  float: right;
+  font-family:"Source Sans Pro",sans-serif;
+  color: #00b3b4;
+  font-weight: bolder;
+}
+
+.continue:hover {
+  cursor: pointer;
+}
+
+.message {
+  border: 5px double orange;
+  font-size: 2em;
+}
+
+.room {
+  text-align: center;
+}
+
+.room-three {
+  background-image: url('../img/dungeon.jpg');
+  height: 100%;
+  width: 100%;
+  height: 100vh;
+  display: table;
+  background-size: cover;
+  vertical-align: bottom;
+  font-size: 30px;
+  text-align: center;
+  padding: 25%;
+}
 
 /* //Hangman  */
+
+.hangman-buttons {
+  @include corners (5px);
+  text-decoration:none;
+  cursor:pointer;
+  font-size:1.5em;
+  width: 200px;
+  height: 200px;
+  border-radius: 100%;
+  border-color: #00b3b4;
+  border-style: solid;
+  border-width: thick;
+  background-color: rgba(0,0,0,0.1);
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+  color: #FFF;
+}
+
+.hangman-buttons:hover {
+  color: #FFF;
+  border-color: #FFF;
+  border-style: solid;
+}
 
 /* Variabes */
 $orange: #ffa600;
@@ -169,17 +197,14 @@ $base-color:$green ;
 
 .wrapper {
   display: none;
-  background:$base-color;
   font-family: "Source Sans Pro",sans-serif;
   /* font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; */
-  color:$white;
   height:100%;
   text-align:center;
   font-size:22px;
   @include clear;
   width:100%;
   margin:0 auto;
-  color: black;
 }
 
 canvas {
@@ -187,25 +212,6 @@ canvas {
   border: $white dashed 2px;
   padding:15px;
 }
-
-/* h1, h2, h3 {
-  font-family: "Source Sans Pro",sans-serif;
-	font-weight: 100;
-	text-transform: uppercase;
-  margin:5px 0; */
-}
-
-/* h1 {
-	font-size: 2.6em;
-}
-
-h2 {
-	font-size: 1.6em;
-}
-
-p{
-  font-size: 1.6em;
-} */
 
 #alphabet {
   @include clear;
@@ -266,29 +272,6 @@ p{
   display:block;
 }
 
-button{
-  @include corners (5px);
-  text-decoration:none;
-  cursor:pointer;
-  font-size:1.5em;
-  width: 200px;
-  height: 200px;
-  border-radius: 100%;
-  border-color: #00b3b4;
-  border-style: solid;
-  border-width: thick;
-  background-color: rgba(0,0,0,0.1);
-  margin-left: 2.5%;
-  margin-right: 2.5%;
-}
-
-button:hover {
-  color: #FFF;
-  border-color: #FFF;
-  border-style: solid;
-
-}
-
 @media (max-width: 767px) {
   #alphabet {
   padding:0 0 0 15px;
@@ -299,30 +282,4 @@ button:hover {
   #alphabet {
   padding:0 0 0 25px;
 }
-
   }
-
-
-.hide-area {
-  display: none;
-}
-
-.continue {
-  float: right;
-  font-family:"Source Sans Pro",sans-serif;
-  color: #00b3b4;
-  font-weight: bolder;
-}
-
-.continue:hover {
-  cursor: pointer;
-}
-
-.message {
-  border: 5px double orange;
-  font-size: 2em;
-}
-
-.room {
-  text-align: center;
-}
