@@ -245,27 +245,29 @@ p{
 
 button{
   @include corners (5px);
-  /* background:$base-color;
-  color:$white;
-  border: solid 1px $white; */
   text-decoration:none;
   cursor:pointer;
-  font-size:1.2em;
-  /* padding:18px 10px;
-  width:180px;
-  margin: 10px; */
+  font-size:1.5em;
   width: 200px;
   height: 200px;
   border-radius: 100%;
   border-color: #00b3b4;
   border-style: solid;
+  background-color: rgba(0,0,0,0.1)
 
-    &:hover{
+    /* &:hover{
       @include transition;
-      background:$white;
+      background:red;
       border: solid 1px $white;
       color:$base-color;
-    }
+    } */
+}
+
+button:hover {
+  color: #FFF;
+  border-color: #FFF;
+  border-style: solid;
+
 }
 
 @media (max-width: 767px) {

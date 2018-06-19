@@ -65,7 +65,7 @@ window.onload = function () {
     if (chosenCategory === categories[0]) {
       catagoryName.innerHTML = "The Chosen Category Is FIFA World Cup Football Teams";
     } else if (chosenCategory === categories[1]) {
-      catagoryName.innerHTML = "The Chosen Category Is Films";
+      catagoryName.innerHTML = "The Chosen Category Is Monsters";
     } else if (chosenCategory === categories[2]) {
       catagoryName.innerHTML = "The Chosen Category Is Cities";
     }
@@ -205,7 +205,7 @@ window.onload = function () {
   play = function () {
     categories = [
         ["columbia", "portugal", "argentina","brasil", "spain", "belgium", "germany"],
-        ["alien", "dirty-harry", "gladiator", "finding-nemo", "jaws"],
+        ["chupacabra", "zombie", "yeti", "mummy", "vampire", "werewolf", "godzilla"],
         ["manchester", "milan", "madrid", "amsterdam", "prague"]
     ];
 
@@ -233,7 +233,7 @@ window.onload = function () {
 
       hints = [
         ["The Coffee Growers", "The Navigators", "The White and Sky-Blue", "Little Canary", "The Red One", "The Red Devils", "The October Fest"],
-        ["Science-Fiction horror film", "1971 American action film", "Historical drama", "Anamated Fish", "Giant great white shark"],
+        ["Mexican myth or vampiric creature", "Corpse without soul", "Abominable Snowman", "Ancient Egyptian monster", "Blood drinking monster", "Man turns into animal", "A Japanese monster"],
         ["Northern city in the UK", "Home of AC and Inter", "Spanish capital", "Netherlands capital", "Czech Republic capital"]
     ];
 
