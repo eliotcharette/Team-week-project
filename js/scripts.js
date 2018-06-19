@@ -13,12 +13,15 @@ function clickRoomOne(event) {
   var cX = event.clientX;
   var cY = event.clientY;
   if(cX > 930 && cX < 1110 && cY > 195 && cY < 530){
+    $("#rm-one-message").show();
     $('#rm-one-message').text("Wifi Password: LoveYourClassmates");
     $('html, body').animate({scrollTop:$(document).height()}, 'fast');
+
   };
 
   if(cX > 495 && cX < 645 && cY > 160 && cY < 370){
-    $('#rm-one-message').text("You clicked on pc");
+    $("#form-wifi").show();
+    $('#rm-one-message').text("Enter Wifi Password:");
     $('html, body').animate({scrollTop:$(document).height()}, 'fast');
   };
 }
