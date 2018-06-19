@@ -16,6 +16,11 @@ function clickRoomOne(event) {
     $('#rm-one-message').text("Wifi Password: LoveYourClassmates");
     $('html, body').animate({scrollTop:$(document).height()}, 'fast');
   };
+
+  if(cX > 495 && cX < 645 && cY > 160 && cY < 370){
+    $('#rm-one-message').text("You clicked on pc");
+    $('html, body').animate({scrollTop:$(document).height()}, 'fast');
+  };
 }
 
 var slamDoor = new Audio("audio/close_door.mp3");

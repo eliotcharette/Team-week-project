@@ -1,6 +1,8 @@
 body {
   margin: 0;
   padding: 0;
+  background-color: black;
+  color: #FFF;
 }
 
 h1 {
@@ -84,4 +86,13 @@ section {
 
 .continue:hover {
   cursor: pointer;
+}
+
+.message {
+  border: 5px double orange;
+  font-size: 2em;
+}
+
+.room {
+  text-align: center;
 }
