@@ -2,13 +2,21 @@ function showCoords1(event) {
   var cX = event.clientX;
   var cY = event.clientY;
   var coords1 = "client - X: " + cX + ", Y coords: " + cY;
-  var coords2 = "screen - X: " + sX + ", Y coords: " + sY;
-  $('#rm-one-message').text(coords1 + ', ' + coords2);
+  $('#rm-one-message').text(coords1);
 
   // if(cX > 200 && cY > 400) {
   //   alert("BOOOOOOOOOO");
   // };
 };
+
+function clickRoomOne(event) {
+  var cX = event.clientX;
+  var cY = event.clientY;
+  if(cX > 930 && cX < 1110 && cY > 195 && cY < 530){
+    $('#rm-one-message').text("Wifi Password: LoveYourClassmates");
+    $('html, body').animate({scrollTop:$(document).height()}, 'fast');
+  };
+}
 
 var slamDoor = new Audio("audio/close_door.mp3");
 var creakingDoor = new Audio("audio/squeaking_door.mp3");
