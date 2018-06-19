@@ -18,9 +18,9 @@ h1 {
   text-align: center;
   display: inline-block;
   padding: 25%;
-  font-family:skia;
+  font-family: "Source Sans Pro",sans-serif;
   font-weight: bolder;
-  font-size: 8em;
+  font-size: 7em;
   font-weight:200;
 }
 
@@ -30,18 +30,28 @@ h1 {
 }
 
 .start-button {
-  background: rgba(0,0,0,0.2);
+  background: rgba(0,0,0,0.5);
   text-align: center;
   width: 250px;
   height: 250px;
   border-radius: 100%;
-  border-color: #fff;
+  border-color: #00b3b4;
   border-width: thick;
   display: inline-block;
-  font-size: 55px;
+  font-size: 1em;
   vertical-align: middle;
   color: #FFF;
   text-decoration: none
+}
+
+#button {
+  font-family: "Source Sans Pro",sans-serif;
+  color: #FFF;
+}
+
+#button:hover {
+  color: #1c1c1c;
+  border-color: rgba(0,0,0,0.5);
 }
 
 .narrative {
@@ -51,4 +61,5 @@ h1 {
   padding: 10%;
   color: #FFF;
   font-size: 2em;
+  font-family: '"Source Sans Pro",sans-serif;
 }
