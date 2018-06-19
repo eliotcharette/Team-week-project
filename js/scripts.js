@@ -67,7 +67,7 @@ window.onload = function () {
     } else if (chosenCategory === categories[1]) {
       catagoryName.innerHTML = "The Chosen Category Is Monsters";
     } else if (chosenCategory === categories[2]) {
-      catagoryName.innerHTML = "The Chosen Category Is Cities";
+      catagoryName.innerHTML = "The Chosen Category Is Intro To Programming";
     }
   }
 
@@ -206,7 +206,7 @@ window.onload = function () {
     categories = [
         ["columbia", "portugal", "argentina","brasil", "spain", "belgium", "germany"],
         ["chupacabra", "zombie", "yeti", "mummy", "vampire", "werewolf", "godzilla"],
-        ["manchester", "milan", "madrid", "amsterdam", "prague"]
+        ["github", "constuctor", "bootstrap", "javascript", "prototypes", "looping", "function"]
     ];
 
     chosenCategory = categories[Math.floor(Math.random() * categories.length)];
@@ -234,7 +234,7 @@ window.onload = function () {
       hints = [
         ["The Coffee Growers", "The Navigators", "The White and Sky-Blue", "Little Canary", "The Red One", "The Red Devils", "The October Fest"],
         ["Mexican myth or vampiric creature", "Corpse without soul", "Abominable Snowman", "Ancient Egyptian monster", "Blood drinking monster", "Man turns into animal", "A Japanese monster"],
-        ["Northern city in the UK", "Home of AC and Inter", "Spanish capital", "Netherlands capital", "Czech Republic capital"]
+        ["Create repositories and stores codes", "A function that can be invoked to create new objects", "Front-end framework", "Programming language used to make web pages interactive", "Is an object from which other objects inherit methods", "Repeating the same block of code until it is specified to stop", "Block of code that performs an action and returns a result" ]
     ];
 
     var catagoryIndex = categories.indexOf(chosenCategory);
