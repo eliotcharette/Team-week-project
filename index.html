@@ -13,21 +13,31 @@
   <body>
     <section id="intro-photo">
       <div class="item animated flash">
-        <h1>Escape From Epicodus<br>
-        <button class="start-button" id="button">E</button></h1>
+        <h1>Escape From Epicodus</h1>
       </div>
+      <button onclick="startGame(event)" id="start-button">E</button>
     </section>
 
-    <div class="narrative">
+    <div class="narrative hide-area" id="narrative-one">
+      <p> The sound of a slamming door, you awaken in the Epicodus Computer Room, all alone.</p>
+      <p>Suddenly screeching sounds surronds you.</p>
+      <p>It draws closer and closer to you.</p>
+      <span class="continue" onclick="toRoomOne(event)">Continue...</span>
+    </div>
+    <div id="room-one" class="hide-area room">
+      <div onclick="clickRoomOne(event)"><img src="img/computer3-resized.jpg" ismap></div>
+      <span id="rm-one-message" class="message hide-area"></span>
+      <form id="form-wifi" class="hide-area">
+        <input type="text" id="wifi">
+      </form>
+    </div>
+    <div class="narrative hide-area" id="narrative-two">
       <p> The sound of a slamming door, you awaken in the Epicodus Computer Room, all alone.</p>
       <p>Suddenly screeching sounds surronds you.</p>
       <p>It draws closer and closer to you.</p>
     </div>
-
-    <div class="room-one">
-      <img src="" alt="computer room">
-      <div onclick="showCoords1(event)"><img src="img/ghost-1.png"></div>
-
+    <div id="room-two" class="hide-area">
+      <div onclick="showCoords1(event)"><img src="img/elevator-resized.jpg"></div>
     </div>
 
 
