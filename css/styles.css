@@ -1,4 +1,4 @@
-body, margin {
+body {
   margin: 0;
   padding: 0;
 }
@@ -25,7 +25,7 @@ h1 {
 }
 
 .item {
-  -webkit-animation-duration: 3s;
+  -webkit-animation-duration: 10s;
   -webkit-animation-iteration-count: 4;
 }
 
@@ -55,11 +55,25 @@ h1 {
 }
 
 .narrative {
-  background-image: url(../img/div-bg.jpg);
+  background-image: url(../img/div-bg-2.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   padding: 10%;
   color: #FFF;
   font-size: 2em;
   font-family: '"Source Sans Pro",sans-serif;
+}
+
+.hide-area {
+  display: none;
+}
+
+.continue {
+  float: right;
+  font-family:fantasy;
+  color: red;
+}
+
+.continue:hover {
+  cursor: pointer;
 }
