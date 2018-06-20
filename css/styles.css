@@ -38,16 +38,16 @@ section {
 #start-button {
   background: rgba(0,0,0,0.5);
   align-items: center;
-  width: 250px;
-  height: 250px;
+  width: 200px;
+  height: 200px;
   border-radius: 100%;
   border-color: #00b3b4;
-  border-width: thick;
+  border-width: 10px;
   display: inline-block;
   font-size: 7em;
   color: #FFF;
   font-family: "Source Sans Pro",sans-serif;
-  text-decoration: none
+  text-decoration: none;
 }
 
 #start-button:hover {
