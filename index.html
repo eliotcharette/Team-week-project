@@ -28,7 +28,14 @@
       <div class="countdown-clock">
         <p id="countdown"></p>
       </div>
-      <div onclick="clickRoomOne(event)"><img src="img/computer3-resized.jpg" ismap></div>
+      <div class="row">
+        <div class="clickable" id="board" onclick="clickBoard()"></div>
+        <div class="clickable" id="pc" onclick="clickPC()"></div>
+        <div class="clickable hide-area" id="clorox" onclick="clickClorox()"></div>
+        <!-- <div onclick="showCoords1(event)"> -->
+          <img src="img/computer3-resized.jpg">
+        <!-- </div> -->
+      </div>
       <span id="rm-one-message" class="message hide-area"></span>
       <form id="form-wifi" class="hide-area">
         <input type="text" id="wifi">

@@ -102,6 +102,43 @@ button:focus {
   text-align: center;
 }
 
+#room-one {
+  position: relative;
+  width: 1700px;
+  height: 1050px;
+}
+
+#board {
+  position: absolute;
+  top: 270px;
+  right: 615px;
+  width: 170px;
+  height: 250px;
+  /* border: 2px solid blue; */
+}
+
+#pc {
+  position: absolute;
+  top: 370px;
+  right: 1080px;
+  width: 140px;
+  height: 130px;
+  /* border: 2px solid blue; */
+}
+
+#clorox {
+  position: absolute;
+  top: 780px;
+  right:1120px;
+  width: 200px;
+  height: 250px;
+  /* border: 2px solid blue; */
+}
+
+.clickable:hover{
+  cursor: pointer;
+}
+
 .room-three {
   background-image: url('../img/dungeon.jpg');
   height: 100%;

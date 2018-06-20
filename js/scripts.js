@@ -1,9 +1,35 @@
 function showCoords1(event) {
-  var cX = event.clientX;
-  var cY = event.clientY;
-  var coords1 = "client - X: " + cX + ", Y coords: " + cY;
-  $('#rm-one-message').text(coords1);
+  // var cX = event.clientX;
+  // var cY = event.clientY;
+  // var coords1 = "client - X: " + cX + ", Y coords: " + cY;
+  // $('#rm-one-message').text(coords1);
+  debugger;
+  var offset = $(this).offset();
+  var X = (event.pageX - offset.left);
+  var Y = (event.pageY - offset.top);
+  $('#rm-one-message').text('X: ' + X + ', Y: ' + Y);
   $("#rm-one-message").show();
+};
+
+function clickBoard(){
+  $("#rm-one-message").show();
+  $('#rm-one-message').text("Wifi Password: LoveYourClassmates");
+  $('html, body').animate({scrollTop:$(document).height()}, 'fast');
+};
+
+function clickPC(){
+  $("#rm-one-message").show();
+  $("#form-wifi").show();
+  $('#rm-one-message').text("Enter Wifi Password:");
+  $('html, body').animate({scrollTop:$(document).height()}, 'fast');
+};
+
+function clickClorox(){
+  $("#rm-one-message").show();
+  $("#form-wifi").hide();
+  $("#email").hide();
+  $('#rm-one-message').text("You found the spare key!")
+  $('html, body').animate({scrollTop:$(document).height()}, 'fast');
 };
 
 function clickRoomOne(event) {
@@ -327,6 +353,7 @@ $(document).ready(function(){
     var wifiPassword = $("input#wifi").val();
     if(wifiPassword === "LoveYourClassmates"){
       $("#email").show();
+      $("#clorox").show();
       $('html, body').animate({scrollTop:$(document).height()}, 'fast');
     } else {
       $("#rm-one-message").text("Please enter the correct password!");
