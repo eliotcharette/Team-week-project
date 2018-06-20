@@ -40,11 +40,6 @@ function clickClorox(){
     $("#narrative-two").fadeIn(2000);
   } , 3000);
 };
-function toRoomTwo() {
-  $("#narrative-two").hide();
-  $("#room-two").fadeIn(2000);
-};
-
 // Set the date we're counting down to
 // var countDownDate = new Date("Sep 5, 2018 15:37:25").getTime();
 var countDownDate = new Date().getTime() + 360000;
@@ -76,7 +71,15 @@ function makeMeTwoDigits(n){
     return (n < 10 ? "0" : "") + n;
 }
 // End of Room ONE
-
+// Beginning of Room TWO
+function toRoomTwo() {
+  $("#narrative-two").hide();
+  $("#room-two").fadeIn(2000);
+  setTimeout(function(){
+    $("#ghost-casper").fadeIn(3000);
+    $("#answer-options").fadeIn(8000);
+  } , 3000);
+};
 
 //Hangman Game
 // window.onload = function () {

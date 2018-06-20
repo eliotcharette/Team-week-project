@@ -50,9 +50,21 @@
       <span class="continue" onclick="toRoomTwo()">Continue...</span>
     </div>
     <div id="room-two" class="hide-area">
-      <img src="img/elevator-resized.jpg">
+      <img src="img/elevator-close.jpg">
+      <div id="ghost-casper" class="hide-area">
+        <div id="ghost-img">
+          <img src="img/casper-2.png" alt="casper">
+        </div>
+        <div id="casper-message-box" class="message">
+          <span id="casper-message">I'm so bored. Will you play a game with me?</span>
+        </div>
+      </div>
+      <div id="answer-options" class="hide-area">
+        <span id="yes-box" class="message clickable" onclick="clickYes()">YES</span>
+        <span id="no-box" class="message clickable" onclick="clickNo()">NO!</span>
+      </div>
     </div>
-
+  <!-- ROOM THREE -->
   <section class="room-three">
     <h2>Your Final Chance</h2>
     <p>The clock is ticking, solve and survive, fail and forever remain...</p>
