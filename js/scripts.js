@@ -1,5 +1,15 @@
 var slamDoor = new Audio("audio/close_door.mp3");
 var creakingDoor = new Audio("audio/squeaking_door.mp3");
+var ticTacPlayerOne = new TicTacPlayer("Player ONE");
+var ticTacPlayerTwo = new TicTacPlayer("Computer");
+var ticTacCounter = 0;
+const imgX = 'img/x.png';
+const imgO = 'img/1.png';
+const imgClear = 'img/clear.png';
+const ticTacWinCondition = [["1a", "1b", "1c"], ["2a", "2b", "2c"], ["3a", "3b", "3c"], ["1a", "2a", "3a"], ["1b", "2b", "3b"], ["1c", "2c", "3c"], ["1a", "2b", "3c"], ["1c", "2b", "3a"]];
+var ticTacBoard = ['1a', '2a', '3a', '1b', '2b', '3b', '1c', '2c', '3c'];
+var ticTacPlayArea = ['1a', '2a', '3a', '1b', '2b', '3b', '1c', '2c', '3c'];
+var ticTacGameOver = false;
 
 function startGame(event) {
   slamDoor.play();
@@ -99,15 +109,6 @@ function TicTacPlayer (player) {
   this.pieceLocations = [];
 };
 
-var ticTacPlayerOne = new TicTacPlayer("Player ONE");
-var ticTacPlayerTwo = new TicTacPlayer("Computer");
-var ticTacCounter = 0;
-const imgX = 'img/x.png';
-const imgO = 'img/1.png';
-const ticTacWinCondition = [["1a", "1b", "1c"], ["2a", "2b", "2c"], ["3a", "3b", "3c"], ["1a", "2a", "3a"], ["1b", "2b", "3b"], ["1c", "2c", "3c"], ["1a", "2b", "3c"], ["1c", "2b", "3a"]];
-var ticTacPlayArea = ['1a', '2a', '3a', '1b', '2b', '3b', '1c', '2c', '3c'];
-var ticTacGameOver = false;
-
 function ticTacChangeImage(id, img){
   var location = id+"pic";
   document.getElementById(location).src = img;
@@ -191,18 +192,46 @@ function ticTacCheckWinCondition() {
       };
     });
     if(p1Count === 3){
-      $("#winner").text(ticTacPlayerOne.name + " Won!!!");
       ticTacGameOver = true;
+      $("#tic-tac-toe-area").hide();
+      debugger;
+      document.getElementById('casper-img').src = 'img/casper.png';
+      $("#casper-message").text("Wow you won! I'll open the elevator for you.");
+      $("#casper-message-box").fadeIn(2000);
+
     } else if (p2Count === 3){
-      $("#winner").text(ticTacPlayerTwo.name + " Won!!!");
       ticTacGameOver = true;
+      $("#tic-tac-toe-area").hide();
+      resetTicTac();
+      $("#casper-message").text("Would you like to play again?");
+      $("#casper-message-box").fadeIn(2000);
+      $("#answer-options").fadeIn(2000);
     };
   });
 
   if(!ticTacGameOver && ticTacPlayArea.length === 0){
-    $("#winner").text("DRAW");
+    $("#tic-tac-toe-area").hide();
+    resetTicTac();
+    $("#casper-message").text("Would you like to play again?");
+    $("#casper-message-box").fadeIn(2000);
+    $("#answer-options").fadeIn(2000);
   };
 };
+
+function resetTicTac(){
+  ticTacPlayArea = new Array(ticTacBoard.length);
+  ticTacPlayerOne.pieceLocations.forEach(function(loc){
+    ticTacPlayerOne.pieceLocations.pop(loc);
+  });
+  ticTacPlayerTwo.pieceLocations.forEach(function(loc){
+    ticTacPlayerTwo.pieceLocations.pop(loc);
+  });
+  ticTacPlayArea = ticTacBoard.map(function(loc){
+    ticTacChangeImage(loc, imgClear);
+    return loc;
+  });
+
+}
 
 function ticTacGetRandomInt(max) {
   return Math.floor(Math.random() * Math.floor(max)+1);
