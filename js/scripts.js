@@ -169,6 +169,7 @@ function startHangman() {
     for (var i = 0; i < geusses.length; i++) {
       if (counter + space === geusses.length) {
         showLives.innerHTML = "You Win!";
+        $(".hide").show();
       }
     }
   }
