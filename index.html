@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/animate.css">
     <link href="https://fonts.googleapis.com/css?family=IM+Fell+English+SC" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/styles.css">
     <script src="js/jquery-3.3.1.js" charset="utf-8"></script>
     <script src="js/scripts.js" charset="utf-8"></script>
@@ -16,6 +17,9 @@
         <h1>Escape From Epicodus</h1>
       </div>
       <button onclick="startGame(event)" id="start-button">E</button>
+      <br>
+      <br>
+      <br>
     </section>
     <!-- ROOM ONE -->
     <div class="narrative hide-area" id="narrative-one">
@@ -91,7 +95,7 @@
 
       <div id="reset">
         <div class="initial-hide">
-          <h3>Player 1</h3>
+          <h3>Player Turn</h3>
           <h3>Total: <span id="player-one-total"></span></h3>
           <div class="player-one">
           <h3>Round Total: <span id= "player-one-round-total"></span></h3>
@@ -104,7 +108,7 @@
       </div>
       <br>
         <div class="initial-hide">
-          <h3>Player 2</h3>
+          <h3>Ghost A.I.</h3>
           <h3>Total: <span id="player-two-total"></span></h3>
         <div class="player-two">
           <h3>Round Total: <span id= "player-two-round-total"></span></h3>
@@ -112,12 +116,14 @@
           <button type="button" id="hold-player-two" class="twentyone-buttons">Hold!</button>
         </div>
         </div>
-
-        <p><span class="result"></span></p>
+        <br>
+        <div class= "item animated shake">
+        <p><span class="result" onclick="startHangman()" ></span></p>
+      </div>
         <br>
         <input type="button" onclick="myFunction()" value="Try-Again" class="twentyone-buttons">
   </div>
-    <br>
+        <br>
     <!-- //Hangman Game// -->
     <div class="wrapper">
         <div id="buttons">
@@ -137,6 +143,24 @@
           <br>
           <!-- <br><button id="reset">Play again</button> -->
         </div>
+    </div>
+    <br>
+    <div class="hide">
+
+    
+    <div class="item animated flash">
+      <div class="escape-door">
+        <p>Escape Epicodus Now!</p>
+      </div>
+      </div>
+    </div>
+
+
+
+    <br>
+    <div class="icons">
+        <a href="https://github.com/sonekase/escape-room" class="fa fa-github"></a>
+      <footer><p id="end">&copy; 2018 Escape From Epicodus</p></footer>
     </div>
 
 
