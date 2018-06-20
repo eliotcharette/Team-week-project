@@ -1,16 +1,21 @@
-function showCoords1(event) {
-  // var cX = event.clientX;
-  // var cY = event.clientY;
-  // var coords1 = "client - X: " + cX + ", Y coords: " + cY;
-  // $('#rm-one-message').text(coords1);
-  debugger;
-  var offset = $(this).offset();
-  var X = (event.pageX - offset.left);
-  var Y = (event.pageY - offset.top);
-  $('#rm-one-message').text('X: ' + X + ', Y: ' + Y);
-  $("#rm-one-message").show();
-};
+var slamDoor = new Audio("audio/close_door.mp3");
+var creakingDoor = new Audio("audio/squeaking_door.mp3");
 
+function startGame(event) {
+  slamDoor.play();
+  setTimeout(function() {
+    creakingDoor.play();
+  }
+  , 3000);
+  $("section").hide();
+  $("#narrative-one").fadeIn(2000);
+  // startClock();
+};
+function toRoomOne() {
+  $("#narrative-one").hide();
+  $("#room-one").fadeIn(2000);
+};
+// Beginning of Room ONE
 function clickBoard(){
   $("#rm-one-message").show();
   $('#rm-one-message').text("Wifi Password: LoveYourClassmates");
@@ -30,37 +35,51 @@ function clickClorox(){
   $("#email").hide();
   $('#rm-one-message').text("You found the spare key!")
   $('html, body').animate({scrollTop:$(document).height()}, 'fast');
+  setTimeout(function(){
+    $("#room-one").hide();
+    $("#narrative-two").fadeIn(2000);
+  } , 3000);
 };
+// Set the date we're counting down to
+// var countDownDate = new Date("Sep 5, 2018 15:37:25").getTime();
+var countDownDate = new Date().getTime() + 360000;
+// Update the count down every 1 second
+var x = setInterval(function() {
 
-function clickRoomOne(event) {
-  var cX = event.clientX;
-  var cY = event.clientY;
-  if(cX > 930 && cX < 1110 && cY > 195 && cY < 530){
-    $("#rm-one-message").show();
-    $('#rm-one-message').text("Wifi Password: LoveYourClassmates");
-    $('html, body').animate({scrollTop:$(document).height()}, 'fast');
+  // Get todays date and time
+  var now = new Date().getTime();
 
-  };
+  // Find the distance between now an the count down date
+  var distance = countDownDate - now;
 
-  if(cX > 495 && cX < 645 && cY > 160 && cY < 370){
-    $("#rm-one-message").show();
-    $("#form-wifi").show();
-    $('#rm-one-message').text("Enter Wifi Password:");
-    $('html, body').animate({scrollTop:$(document).height()}, 'fast');
-  };
+  // Time calculations for days, hours, minutes and seconds
+  // var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  // var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-  if(cX > 385 && cX < 300 && cY > 300 && cY < 575){
-    $("#rm-one-message").show();
-    $("#form-wifi").hide();
-    $("#email").hide();
-    $('#rm-one-message').text("You found the spare key!")
-    $('html, body').animate({scrollTop:$(document).height()}, 'fast');
-  };
+  document.getElementById("countdown").innerHTML = makeMeTwoDigits(minutes) + ":" + makeMeTwoDigits(seconds);
+
+  // If the count down is finished, write some text
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("countdown").innerHTML = "EXPIRED";
+  }
+}, 1000);
+
+function makeMeTwoDigits(n){
+    return (n < 10 ? "0" : "") + n;
 }
-
-var slamDoor = new Audio("audio/close_door.mp3");
-var creakingDoor = new Audio("audio/squeaking_door.mp3");
-
+// End of Room ONE
+// Beginning of Room TWO
+function toRoomTwo() {
+  $("#narrative-two").hide();
+  $("#room-two").fadeIn(2000);
+  setTimeout(function(){
+    $("#ghost-casper").fadeIn(3000);
+    $("#answer-options").fadeIn(8000);
+  } , 3000);
+};
 
 //Hangman Game
 // window.onload = function () {
@@ -299,52 +318,6 @@ function startHangman() {
     context.clearRect(0, 0, 400, 400);
     play();
   }
-}
-
-function startGame(event) {
-  slamDoor.play();
-  setTimeout(function() {
-    creakingDoor.play();
-  }
-  , 3000);
-  $("section").hide();
-  $("#narrative-one").fadeIn(2000);
-  // startClock();
-};
-function toRoomOne(event) {
-  $("#room-one").fadeIn(2000);
-  $("#narrative-one").hide();
-};
-
-// Set the date we're counting down to
-// var countDownDate = new Date("Sep 5, 2018 15:37:25").getTime();
-var countDownDate = new Date().getTime() + 360000;
-// Update the count down every 1 second
-var x = setInterval(function() {
-
-  // Get todays date and time
-  var now = new Date().getTime();
-
-  // Find the distance between now an the count down date
-  var distance = countDownDate - now;
-
-  // Time calculations for days, hours, minutes and seconds
-  // var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  // var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-  document.getElementById("countdown").innerHTML = makeMeTwoDigits(minutes) + ":" + makeMeTwoDigits(seconds);
-
-  // If the count down is finished, write some text
-  if (distance < 0) {
-    clearInterval(x);
-    document.getElementById("countdown").innerHTML = "EXPIRED";
-  }
-}, 1000);
-
-function makeMeTwoDigits(n){
-    return (n < 10 ? "0" : "") + n;
 }
 
 $(document).ready(function(){

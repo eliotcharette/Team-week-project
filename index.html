@@ -17,12 +17,12 @@
       </div>
       <button onclick="startGame(event)" id="start-button">E</button>
     </section>
-
+    <!-- ROOM ONE -->
     <div class="narrative hide-area" id="narrative-one">
       <p> The sound of a slamming door, you awaken in the Epicodus Computer Room, all alone.</p>
       <p>Suddenly screeching sounds surronds you.</p>
       <p>It draws closer and closer to you.</p>
-      <span class="continue" onclick="toRoomOne(event)">Continue...</span>
+      <span class="continue" onclick="toRoomOne()">Continue...</span>
     </div>
     <div id="room-one" class="hide-area room">
       <div class="countdown-clock">
@@ -33,7 +33,7 @@
         <div class="clickable" id="pc" onclick="clickPC()"></div>
         <div class="clickable hide-area" id="clorox" onclick="clickClorox()"></div>
         <!-- <div onclick="showCoords1(event)"> -->
-          <img src="img/computer3-resized.jpg">
+          <img src="img/computer-resized.jpg">
         <!-- </div> -->
       </div>
       <span id="rm-one-message" class="message hide-area"></span>
@@ -44,16 +44,27 @@
         <img src="img/email.png" alt="email">
       </div>
     </div>
+    <!-- ROOM TWO -->
     <div class="narrative hide-area" id="narrative-two">
-      <p> The sound of a slamming door, you awaken in the Epicodus Computer Room, all alone.</p>
-      <p>Suddenly screeching sounds surrounds you.</p>
-      <p>It draws closer and closer to you.</p>
+      <p>Welcome to room TWO.</p>
+      <span class="continue" onclick="toRoomTwo()">Continue...</span>
     </div>
     <div id="room-two" class="hide-area">
-      <div onclick="showCoords1(event)"><img src="img/elevator-resized.jpg"></div>
+      <img src="img/elevator-close.jpg">
+      <div id="ghost-casper" class="hide-area">
+        <div id="ghost-img">
+          <img src="img/casper-2.png" alt="casper">
+        </div>
+        <div id="casper-message-box" class="message">
+          <span id="casper-message">I'm so bored. Will you play a game with me?</span>
+        </div>
+      </div>
+      <div id="answer-options" class="hide-area">
+        <span id="yes-box" class="message clickable" onclick="clickYes()">YES</span>
+        <span id="no-box" class="message clickable" onclick="clickNo()">NO!</span>
+      </div>
     </div>
-
-
+  <!-- ROOM THREE -->
   <section class="room-three">
     <h2>Your Final Chance</h2>
     <p>The clock is ticking, solve and survive, fail and forever remain...</p>
