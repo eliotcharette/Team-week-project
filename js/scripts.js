@@ -1,37 +1,3 @@
-function showCoords1(event) {
-  var cX = event.clientX;
-  var cY = event.clientY;
-  var coords1 = "client - X: " + cX + ", Y coords: " + cY;
-  $('#rm-one-message').text(coords1);
-  $("#rm-one-message").show();
-};
-
-function clickRoomOne(event) {
-  var cX = event.clientX;
-  var cY = event.clientY;
-  if(cX > 930 && cX < 1110 && cY > 195 && cY < 530){
-    $("#rm-one-message").show();
-    $('#rm-one-message').text("Wifi Password: LoveYourClassmates");
-    $('html, body').animate({scrollTop:$(document).height()}, 'fast');
-
-  };
-
-  if(cX > 495 && cX < 645 && cY > 160 && cY < 370){
-    $("#rm-one-message").show();
-    $("#form-wifi").show();
-    $('#rm-one-message').text("Enter Wifi Password:");
-    $('html, body').animate({scrollTop:$(document).height()}, 'fast');
-  };
-
-  if(cX > 385 && cX < 300 && cY > 300 && cY < 575){
-    $("#rm-one-message").show();
-    $("#form-wifi").hide();
-    $("#email").hide();
-    $('#rm-one-message').text("You found the spare key!")
-    $('html, body').animate({scrollTop:$(document).height()}, 'fast');
-  };
-}
-
 var slamDoor = new Audio("audio/close_door.mp3");
 var creakingDoor = new Audio("audio/squeaking_door.mp3");
 
