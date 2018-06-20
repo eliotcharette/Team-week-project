@@ -35,17 +35,25 @@
       <div class="row">
         <div class="clickable" id="board" onclick="clickBoard()"></div>
         <div class="clickable" id="pc" onclick="clickPC()"></div>
-        <div class="clickable hide-area" id="clorox" onclick="clickClorox()"></div>
-        <!-- <div onclick="showCoords1(event)"> -->
-          <img src="img/computer-resized.jpg">
-        <!-- </div> -->
+        <div class="clickable hide-area" id="clorox" onclick="clickClorox()">
+        </div>
+        <div id="room-one-key" class="hide-area">
+          <img src="img/key.png" alt="key">
+          <p class="message">You found the spare key</p>
+        </div>
+        <img src="img/computer-resized.jpg">
       </div>
-      <span id="rm-one-message" class="message hide-area"></span>
-      <form id="form-wifi" class="hide-area">
-        <input type="text" id="wifi">
-      </form>
-      <div id="email" class="hide-area">
-        <img src="img/email.png" alt="email">
+      <div id="password-img" class="hide-area">
+        <img class="item2 animated zoomIn" src="img/password-sm.jpg" alt="password image">
+      </div>
+      <div id="pc-area" class="hide-area">
+        <form id="form-wifi">
+          <label for="wifi">Enter Wifi Password</label>
+          <input type="text" id="wifi">
+        </form>
+        <div id="email" class="hide-area">
+          <img src="img/email.png" alt="email">
+        </div>
       </div>
     </div>
     <!-- ROOM TWO -->
@@ -57,7 +65,7 @@
       <img src="img/elevator-close.jpg">
       <div id="ghost-casper" class="hide-area">
         <div id="ghost-img">
-          <img src="img/casper-2.png" alt="casper">
+          <img id="casper-img" src="img/casper-2.png" alt="casper">
         </div>
         <div id="casper-message-box" class="message">
           <span id="casper-message">I'm so bored. Will you play a game with me?</span>
@@ -66,6 +74,26 @@
       <div id="answer-options" class="hide-area">
         <span id="yes-box" class="message clickable" onclick="clickYes()">YES</span>
         <span id="no-box" class="message clickable" onclick="clickNo()">NO!</span>
+      </div>
+      <div id="tic-tac-toe-area" class="hide-area">
+        <div class="row" id="row-1">
+          <div class="col-md-4 tic-tac" onClick="playTicTac(this.id)" id="1a"><img id="1apic" src="img/clear.png" alt="clear"></div>
+          <div class="col-md-4 tic-tac" onClick="playTicTac(this.id)" id="1b"><img id="1bpic" src="img/clear.png" alt="clear"></div>
+          <div class="col-md-4 tic-tac" onClick="playTicTac(this.id)" id="1c"><img id="1cpic" src="img/clear.png" alt="clear"></div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4 tic-tac" onClick="playTicTac(this.id)" id="2a"><img id="2apic" src="img/clear.png" alt="clear"></div>
+          <div class="col-md-4 tic-tac" onClick="playTicTac(this.id)" id="2b"><img id="2bpic" src="img/clear.png" alt="clear"></div>
+          <div class="col-md-4 tic-tac" onClick="playTicTac(this.id)" id="2c"><img id="2cpic" src="img/clear.png" alt="clear"></div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4 tic-tac" onClick="playTicTac(this.id)" id="3a"><img id="3apic" src="img/clear.png" alt="clear"></div>
+          <div class="col-md-4 tic-tac" onClick="playTicTac(this.id)" id="3b"><img id="3bpic" src="img/clear.png" alt="clear"></div>
+          <div class="col-md-4 tic-tac" onClick="playTicTac(this.id)" id="3c"><img id="3cpic" src="img/clear.png" alt="clear"></div>
+        </div>
+        <span id="winner">Test</span>
       </div>
     </div>
 
@@ -80,7 +108,7 @@
     <form id="game-input">
       <h2>Roll 21 or Fade Away...</h2>
       <div class="item animated flash">
-      <p>"CAUTION: 1,3,5 Your Alive, 2,4,6 Time Tic Tic..."</p>
+      <p>"CAUTION: 1,3,5 Your Alive, 2,4 tic-tac,6 Time Tic Tic..."</p>
     </div>
       <div class="hide-label">
         <label for="dice">Number of dice</label>
