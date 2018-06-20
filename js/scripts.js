@@ -1,5 +1,15 @@
 var slamDoor = new Audio("audio/close_door.mp3");
 var creakingDoor = new Audio("audio/squeaking_door.mp3");
+var ticTacPlayerOne = new TicTacPlayer("Player ONE");
+var ticTacPlayerTwo = new TicTacPlayer("Computer");
+var ticTacCounter = 0;
+const imgX = 'img/x.png';
+const imgO = 'img/1.png';
+const imgClear = 'img/clear.png';
+const ticTacWinCondition = [["1a", "1b", "1c"], ["2a", "2b", "2c"], ["3a", "3b", "3c"], ["1a", "2a", "3a"], ["1b", "2b", "3b"], ["1c", "2c", "3c"], ["1a", "2b", "3c"], ["1c", "2b", "3a"]];
+var ticTacBoard = ['1a', '2a', '3a', '1b', '2b', '3b', '1c', '2c', '3c'];
+var ticTacPlayArea = ['1a', '2a', '3a', '1b', '2b', '3b', '1c', '2c', '3c'];
+var ticTacGameOver = false;
 
 function startGame(event) {
   slamDoor.play();
@@ -17,24 +27,21 @@ function toRoomOne() {
 };
 // Beginning of Room ONE
 function clickBoard(){
-  $("#rm-one-message").show();
-  $('#rm-one-message').text("Wifi Password: LoveYourClassmates");
-  $('html, body').animate({scrollTop:$(document).height()}, 'fast');
+  $("#password-img").show();
 };
 
 function clickPC(){
-  $("#rm-one-message").show();
-  $("#form-wifi").show();
-  $('#rm-one-message').text("Enter Wifi Password:");
-  $('html, body').animate({scrollTop:$(document).height()}, 'fast');
+  // $("#rm-one-message").show();
+  $("#password-img").hide();
+  $("#pc-area").show();
+  // $('#rm-one-message').text("Enter Wifi Password:");
+  // $('html, body').animate({scrollTop:$(document).height()}, 'fast');
 };
 
 function clickClorox(){
   $("#rm-one-message").show();
-  $("#form-wifi").hide();
-  $("#email").hide();
-  $('#rm-one-message').text("You found the spare key!")
-  $('html, body').animate({scrollTop:$(document).height()}, 'fast');
+  $("#pc-area").hide();
+  $('#room-one-key').show();
   setTimeout(function(){
     $("#room-one").hide();
     $("#narrative-two").fadeIn(2000);
@@ -77,8 +84,169 @@ function toRoomTwo() {
   $("#room-two").fadeIn(2000);
   setTimeout(function(){
     $("#ghost-casper").fadeIn(3000);
-    $("#answer-options").fadeIn(8000);
+    $("#answer-options").fadeIn(5000);
   } , 3000);
+};
+
+function clickNo(){
+  $("#casper-message-box").hide();
+  $("#answer-options").hide();
+  $("#casper-message").text("Please play a game with me....I'm so lonely...");
+  $("#casper-message-box").fadeIn(3000);
+  $("#answer-options").fadeIn(3000);
+};
+
+function clickYes() {
+  $("#casper-message-box").hide();
+  $("#answer-options").hide();
+  $("#tic-tac-toe-area").show();
+  ticTacFirstTurn();
+};
+
+// Tic-Tac-Toe Game
+function TicTacPlayer (player) {
+  this.name = player;
+  this.pieceLocations = [];
+};
+
+function ticTacChangeImage(id, img){
+  var location = id+"pic";
+  document.getElementById(location).src = img;
+};
+
+function playTicTac(id) {
+  if(ticTacPlayArea.indexOf(id) >= 0){
+    ticTacPlayArea.splice(ticTacPlayArea.indexOf(id), 1);
+    if (ticTacCounter%2){
+      ticTacPlayerOneTurn(id);
+      } else {
+      ticTacPlayerTwoTurn(id);
+    };
+    ticTacCheckWinCondition();
+    ticTacCounter += 1;
+    if(ticTacPlayerTwo.name === "Computer" && ticTacCounter%2 === 0 && !ticTacGameOver){
+      ticTacComputerAI();
+    };
+  };
+};
+
+function ticTacPlayerOneTurn(id) {
+  ticTacChangeImage(id,imgX);
+  ticTacPlayerOne.pieceLocations.push(id);
+  $("#winner").text(ticTacPlayerTwo.name + " Turn");
+};
+
+function ticTacPlayerTwoTurn(id) {
+  ticTacChangeImage(id,imgO);
+  ticTacPlayerTwo.pieceLocations.push(id);
+  $("#winner").text(ticTacPlayerOne.name + " Turn");
+};
+
+function ticTacComputerAI() {
+  var id = ticTacPlayArea[ticTacGetRandomInt(ticTacPlayArea.length)-1];
+  var priority = 0;
+  var p1RemainingMoves = [];
+  var p2RemainingMoves = [];
+  for(var i = 0; i < ticTacWinCondition.length; i++){
+    p1RemainingMoves = ticTacWinCondition[i].map(function(loc){
+      return loc;
+    });
+    p2RemainingMoves = ticTacWinCondition[i].map(function(loc){
+      return loc;
+    });
+    ticTacWinCondition[i].forEach(function(location){
+      if (ticTacPlayerOne.pieceLocations.indexOf(location) > -1){
+        p1RemainingMoves.splice(p1RemainingMoves.indexOf(location), 1);
+      };
+      if (ticTacPlayerTwo.pieceLocations.indexOf(location) > -1){
+        p2RemainingMoves.splice(p2RemainingMoves.indexOf(location), 1);
+      };
+    });
+    if(p2RemainingMoves.length === 1 && ticTacPlayArea.indexOf(p2RemainingMoves[0]) >= 0){
+      id = p2RemainingMoves[0];
+      i = ticTacWinCondition.length;
+    } else if(p1RemainingMoves.length === 1 && ticTacPlayArea.indexOf(p1RemainingMoves[0]) >= 0){
+      id = p1RemainingMoves[0];
+      priority = 1;
+    } else if(p2RemainingMoves.length === 2 && p1RemainingMoves.length === 3 && priority !== 1){
+      id = p2RemainingMoves[ticTacGetRandomInt(2)-1];
+    };
+
+  };
+
+  playTicTac(id);
+};
+
+function ticTacCheckWinCondition() {
+  var p1Count = 0;
+  var p2Count = 0;
+  ticTacWinCondition.forEach(function(winningArray){
+    p1Count = 0;
+    p2Count = 0;
+    winningArray.forEach(function(location){
+      if (ticTacPlayerOne.pieceLocations.indexOf(location) > -1){
+        p1Count += 1;
+      };
+      if (ticTacPlayerTwo.pieceLocations.indexOf(location) > -1){
+        p2Count += 1;
+      };
+    });
+    if(p1Count === 3){
+      ticTacGameOver = true;
+      $("#tic-tac-toe-area").hide();
+      debugger;
+      document.getElementById('casper-img').src = 'img/casper.png';
+      $("#casper-message").text("Wow you won! I'll open the elevator for you.");
+      $("#casper-message-box").fadeIn(2000);
+
+    } else if (p2Count === 3){
+      ticTacGameOver = true;
+      $("#tic-tac-toe-area").hide();
+      resetTicTac();
+      $("#casper-message").text("Would you like to play again?");
+      $("#casper-message-box").fadeIn(2000);
+      $("#answer-options").fadeIn(2000);
+    };
+  });
+
+  if(!ticTacGameOver && ticTacPlayArea.length === 0){
+    $("#tic-tac-toe-area").hide();
+    resetTicTac();
+    $("#casper-message").text("Would you like to play again?");
+    $("#casper-message-box").fadeIn(2000);
+    $("#answer-options").fadeIn(2000);
+  };
+};
+
+function resetTicTac(){
+  ticTacPlayArea = new Array(ticTacBoard.length);
+  ticTacPlayerOne.pieceLocations.forEach(function(loc){
+    ticTacPlayerOne.pieceLocations.pop(loc);
+  });
+  ticTacPlayerTwo.pieceLocations.forEach(function(loc){
+    ticTacPlayerTwo.pieceLocations.pop(loc);
+  });
+  ticTacPlayArea = ticTacBoard.map(function(loc){
+    ticTacChangeImage(loc, imgClear);
+    return loc;
+  });
+
+}
+
+function ticTacGetRandomInt(max) {
+  return Math.floor(Math.random() * Math.floor(max)+1);
+};
+
+function ticTacFirstTurn() {
+  ticTacCounter = ticTacGetRandomInt(2);
+  if(ticTacCounter === 1){
+    $("#winner").text(ticTacPlayerOne.name + " Turn");
+  } else {
+    $("#winner").text(ticTacPlayerTwo.name + " Turn");
+    if(ticTacPlayerTwo.name === "Computer"){
+      ticTacComputerAI();
+    };
+  };
 };
 
 //Hangman Game
@@ -320,22 +488,6 @@ function startHangman() {
     play();
   }
 }
-
-$(document).ready(function(){
-  $("#form-wifi").submit(function(event){
-    event.preventDefault();
-    var wifiPassword = $("input#wifi").val();
-    if(wifiPassword === "LoveYourClassmates"){
-      $("#email").show();
-      $("#clorox").show();
-      $('html, body').animate({scrollTop:$(document).height()}, 'fast');
-    } else {
-      $("#rm-one-message").text("Please enter the correct password!");
-    };
-    return false;
-  });
-});
-
 // business logic for 21
 var total = 0;
 var roundScore = 0;
@@ -455,17 +607,16 @@ $(document).ready(function(){
     $("#player-two-round-total").text(roundScore);
   });
 
-
-
+// Room ONE form
   $("#form-wifi").submit(function(event){
     event.preventDefault();
     var wifiPassword = $("input#wifi").val();
     if(wifiPassword === "LoveYourClassmates"){
+      $("#form-wifi").hide();
       $("#email").show();
       $("#clorox").show();
-      $('html, body').animate({scrollTop:$(document).height()}, 'fast');
     } else {
-      $("#rm-one-message").text("Please enter the correct password!");
+      $("#wifi").val("");
     };
     return false;
   });
