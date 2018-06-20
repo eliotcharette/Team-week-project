@@ -1,3 +1,7 @@
+.hide-area {
+  display: none;
+}
+
 .item {
   -webkit-animation-duration: 10s;
   -webkit-animation-iteration-count: 4;
@@ -58,7 +62,7 @@ button:focus {
 }
 
 .narrative {
-  background-image: url(../img/div-bg-2.jpg);
+  background-image: url(../img/narrative-bg.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   padding: 10%;
@@ -78,10 +82,6 @@ button:focus {
   color: red;
 }
 
-.hide-area {
-  display: none;
-}
-
 .continue {
   float: right;
   font-family:"Source Sans Pro",sans-serif;
@@ -96,6 +96,7 @@ button:focus {
 .message {
   border: 5px double orange;
   font-size: 2em;
+  padding: 1%;
 }
 
 .room {
@@ -110,29 +111,66 @@ button:focus {
 
 #board {
   position: absolute;
-  top: 270px;
-  right: 615px;
+  top: 230px;
+  right: 690px;
   width: 170px;
-  height: 250px;
+  height: 290px;
   /* border: 2px solid blue; */
 }
 
 #pc {
   position: absolute;
-  top: 370px;
-  right: 1080px;
-  width: 140px;
-  height: 130px;
+  top: 330px;
+  right: 1170px;
+  width: 160px;
+  height: 140px;
   /* border: 2px solid blue; */
 }
 
 #clorox {
   position: absolute;
   top: 780px;
-  right:1120px;
-  width: 200px;
+  right:1170px;
+  width: 350px;
   height: 250px;
   /* border: 2px solid blue; */
+}
+
+#room-two {
+  position: relative;
+  width: 1700px;
+  height: 1050px;
+}
+
+#ghost-img {
+  position: absolute;
+  top: 300px;
+  right: 1400px;
+  width: 170px;
+}
+
+#ghost-img img {
+  width: 100%;
+}
+
+#casper-message-box {
+  position: absolute;
+  top: 350px;
+  right: 650px;
+}
+
+#yes-box {
+  position: absolute;
+  top: 500px;
+  right: 1050px;
+  color: green;
+}
+
+#no-box {
+  position: absolute;
+  top: 500px;
+  right: 850px;
+  color: red;
 }
 
 .clickable:hover{
