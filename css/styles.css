@@ -265,6 +265,11 @@ button:focus {
   color: #FFF;
 }
 
+.result {
+  font-family: "Source Sans Pro",sans-serif;
+  font-size: 50px;
+}
+
 
 
 

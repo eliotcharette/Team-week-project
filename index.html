@@ -17,6 +17,9 @@
         <h1>Escape From Epicodus</h1>
       </div>
       <button onclick="startGame(event)" id="start-button">E</button>
+      <br>
+      <br>
+      <br>
     </section>
     <!-- ROOM ONE -->
     <div class="narrative hide-area" id="narrative-one">
@@ -92,7 +95,7 @@
 
       <div id="reset">
         <div class="initial-hide">
-          <h3>Player 1</h3>
+          <h3>Player Turn</h3>
           <h3>Total: <span id="player-one-total"></span></h3>
           <div class="player-one">
           <h3>Round Total: <span id= "player-one-round-total"></span></h3>
@@ -105,7 +108,7 @@
       </div>
       <br>
         <div class="initial-hide">
-          <h3>Player 2</h3>
+          <h3>Ghost A.I.</h3>
           <h3>Total: <span id="player-two-total"></span></h3>
         <div class="player-two">
           <h3>Round Total: <span id= "player-two-round-total"></span></h3>
@@ -113,12 +116,14 @@
           <button type="button" id="hold-player-two" class="twentyone-buttons">Hold!</button>
         </div>
         </div>
-
-        <p><span class="result"></span></p>
+        <br>
+        <div class= "item animated shake">
+        <p><span class="result" onclick="startHangman()" ></span></p>
+      </div>
         <br>
         <input type="button" onclick="myFunction()" value="Try-Again" class="twentyone-buttons">
   </div>
-    <br>
+        <br>
     <!-- //Hangman Game// -->
     <div class="wrapper">
         <div id="buttons">
