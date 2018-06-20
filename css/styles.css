@@ -215,6 +215,61 @@ button:focus {
   border-style: solid;
 }
 
+/* //twenty-one game// */
+
+#twenty-one {
+  text-align: center;
+  font-family: "Source Sans Pro",sans-serif;
+}
+
+#reset {
+  text-align: center;
+}
+
+.hide-label {
+  display: none;
+}
+
+ #roll-playerone {
+  border: 1px solid black;
+  background-color: black;
+  display: inline-block;
+  border-radius: 7em;
+  padding: 1%;
+  margin: 5% 5% 0% 5%;
+}
+
+#roll-playertwo {
+  border: 1px solid black;
+  background-color: black;
+  display: inline-block;
+  border-radius: 7em;
+  padding: 1%;
+  margin: 5% 5% 0% 5%;
+}
+
+.twentyone-buttons {
+  @include corners (5px);
+  text-decoration:none;
+  cursor:pointer;
+  font-size:1.5em;
+  width: 125px;
+  height: 125px;
+  border-radius: 100%;
+  border-color: #00b3b4;
+  border-style: solid;
+  border-width: thick;
+  background-color: rgba(0,0,0,0.1);
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+  color: #FFF;
+}
+
+
+
+
+
+
 /* Variabes */
 $orange: #ffa600;
 $green: #c1d72e;
