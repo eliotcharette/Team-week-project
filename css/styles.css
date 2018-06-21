@@ -81,6 +81,7 @@ button:focus {
 
 #countdown {
   position: fixed;
+  z-index: 999;
   top: 0%;
   right: 50%;
   border: 5px solid red;

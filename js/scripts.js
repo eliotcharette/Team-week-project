@@ -1,15 +1,5 @@
 var slamDoor = new Audio("audio/close_door.mp3");
 var creakingDoor = new Audio("audio/squeaking_door.mp3");
-var ticTacPlayerOne = new TicTacPlayer("Player ONE");
-var ticTacPlayerTwo = new TicTacPlayer("Computer");
-var ticTacCounter = 0;
-const imgX = 'img/x.png';
-const imgO = 'img/1.png';
-const imgClear = 'img/clear.png';
-const ticTacWinCondition = [["1a", "1b", "1c"], ["2a", "2b", "2c"], ["3a", "3b", "3c"], ["1a", "2a", "3a"], ["1b", "2b", "3b"], ["1c", "2c", "3c"], ["1a", "2b", "3c"], ["1c", "2b", "3a"]];
-var ticTacBoard = ['1a', '2a', '3a', '1b', '2b', '3b', '1c', '2c', '3c'];
-var ticTacPlayArea = ['1a', '2a', '3a', '1b', '2b', '3b', '1c', '2c', '3c'];
-var ticTacGameOver = false;
 
 function startGame(event) {
   slamDoor.play();
@@ -24,6 +14,7 @@ function startGame(event) {
 function toRoomOne() {
   $("#narrative-one").hide();
   $("#room-one").fadeIn(2000);
+  $(".countdown-clock").show();
 };
 // Beginning of Room ONE
 function clickBoard(){
@@ -108,6 +99,16 @@ function TicTacPlayer (player) {
   this.name = player;
   this.pieceLocations = [];
 };
+var ticTacPlayerOne = new TicTacPlayer("Player ONE");
+var ticTacPlayerTwo = new TicTacPlayer("Computer");
+var ticTacCounter = 0;
+const imgX = 'img/x.png';
+const imgO = 'img/1.png';
+const imgClear = 'img/clear.png';
+const ticTacWinCondition = [["1a", "1b", "1c"], ["2a", "2b", "2c"], ["3a", "3b", "3c"], ["1a", "2a", "3a"], ["1b", "2b", "3b"], ["1c", "2c", "3c"], ["1a", "2b", "3c"], ["1c", "2b", "3a"]];
+var ticTacBoard = ['1a', '2a', '3a', '1b', '2b', '3b', '1c', '2c', '3c'];
+var ticTacPlayArea = ['1a', '2a', '3a', '1b', '2b', '3b', '1c', '2c', '3c'];
+var ticTacGameOver = false;
 
 function ticTacChangeImage(id, img){
   var location = id+"pic";
@@ -115,6 +116,7 @@ function ticTacChangeImage(id, img){
 };
 
 function playTicTac(id) {
+  debugger;
   if(ticTacPlayArea.indexOf(id) >= 0){
     ticTacPlayArea.splice(ticTacPlayArea.indexOf(id), 1);
     if (ticTacCounter%2){
@@ -133,13 +135,13 @@ function playTicTac(id) {
 function ticTacPlayerOneTurn(id) {
   ticTacChangeImage(id,imgX);
   ticTacPlayerOne.pieceLocations.push(id);
-  $("#winner").text(ticTacPlayerTwo.name + " Turn");
+  $("#tictactoe-message").text(ticTacPlayerTwo.name + " Turn");
 };
 
 function ticTacPlayerTwoTurn(id) {
   ticTacChangeImage(id,imgO);
   ticTacPlayerTwo.pieceLocations.push(id);
-  $("#winner").text(ticTacPlayerOne.name + " Turn");
+  $("#tictactoe-message").text(ticTacPlayerOne.name + " Turn");
 };
 
 function ticTacComputerAI() {
@@ -194,11 +196,16 @@ function ticTacCheckWinCondition() {
     if(p1Count === 3){
       ticTacGameOver = true;
       $("#tic-tac-toe-area").hide();
-      debugger;
       document.getElementById('casper-img').src = 'img/casper.png';
       $("#casper-message").text("Wow you won! I'll open the elevator for you.");
       $("#casper-message-box").fadeIn(2000);
-
+      setTimeout(function(){
+        document.getElementById('elevator').src = 'img/elevator-open.jpg';
+      }, 1000);
+      setTimeout(function(){
+        $("#room-two").hide();
+        $("#narrative-three").fadeIn(2000);
+      } , 2000);
     } else if (p2Count === 3){
       ticTacGameOver = true;
       $("#tic-tac-toe-area").hide();
@@ -219,13 +226,15 @@ function ticTacCheckWinCondition() {
 };
 
 function resetTicTac(){
+  ticTacCounter = 0;
+  ticTacGameOver = false;
   ticTacPlayArea = new Array(ticTacBoard.length);
-  ticTacPlayerOne.pieceLocations.forEach(function(loc){
-    ticTacPlayerOne.pieceLocations.pop(loc);
-  });
-  ticTacPlayerTwo.pieceLocations.forEach(function(loc){
-    ticTacPlayerTwo.pieceLocations.pop(loc);
-  });
+  while(ticTacPlayerOne.pieceLocations.length > 0) {
+    ticTacPlayerOne.pieceLocations.pop();
+  };
+  while(ticTacPlayerTwo.pieceLocations.length > 0) {
+    ticTacPlayerTwo.pieceLocations.pop();
+  };
   ticTacPlayArea = ticTacBoard.map(function(loc){
     ticTacChangeImage(loc, imgClear);
     return loc;
@@ -240,13 +249,20 @@ function ticTacGetRandomInt(max) {
 function ticTacFirstTurn() {
   ticTacCounter = ticTacGetRandomInt(2);
   if(ticTacCounter === 1){
-    $("#winner").text(ticTacPlayerOne.name + " Turn");
+    $("#tictactoe-message").text(ticTacPlayerOne.name + " Turn");
   } else {
-    $("#winner").text(ticTacPlayerTwo.name + " Turn");
+    $("#tictactoe-message").text(ticTacPlayerTwo.name + " Turn");
     if(ticTacPlayerTwo.name === "Computer"){
       ticTacComputerAI();
     };
   };
+};
+
+// End of Room TWO
+// Beginning of Room THREE
+function toRoomThree() {
+  $("#narrative-three").hide();
+  $(".room-three").fadeIn(2000);
 };
 
 //Hangman Game
