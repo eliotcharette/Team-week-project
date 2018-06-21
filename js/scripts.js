@@ -92,8 +92,8 @@ function clickNo(){
   $("#casper-message-box").hide();
   $("#answer-options").hide();
   $("#casper-message").text("Please play a game with me....I'm so lonely...");
-  $("#casper-message-box").fadeIn(3000);
-  $("#answer-options").fadeIn(3000);
+  $("#casper-message-box").fadeIn(2000);
+  $("#answer-options").fadeIn(2000);
 };
 
 function clickYes() {
