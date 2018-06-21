@@ -103,41 +103,48 @@
         <span class="continue" onclick="toRoomThree()">Continue...</span>
       </div>
 
-      <div class="hide-area room room-three">
-          <h2>Your Final Chance</h2>
-          <p>The clock is ticking, solve and survive, fail and forever remain...</p>
-          <button id="start-hangman" onclick="startHangman()" class="hangman-buttons">E</button>
-        <br>
-        <!-- //21 Dice Game// -->
-        <div id="twenty-one">
-          <form id="game-input">
-            <h2>Roll 21 or Fade Away...</h2>
-            <div class="item animated flash">
-            <p id="caution">"CAUTION: 1,3,5 Your Alive, 2,4 tic-tac,6 Time Tic Tic..."</p>
-            </div>
-          <div class="hide-label">
-            <label for="dice">Number of dice</label>
-            <select class="form-control" id="dice">
-            <option value="0">None</option>
-            <option value="1">1</option>
-            </select>
-            <button type="submit" class="btn btn-success">Lets play!</button>
-          </div>
-          </form>
-          <br>
+    <section class="room-three hide-area">
+      <h2>Your Final Chance</h2>
+      <p>The clock is ticking, solve and survive, fail and forever remain...</p>
+      <button id="start-21" class="hangman-buttons">E</button>
+    </section>
+    <br>
+    <!-- //21 Dice Game// -->
+    <div id="twenty-one">
+      <form id="game-input">
+        <div class="hide-21">
 
-          <div id="reset">
-            <div class="initial-hide">
-              <h3>Player Turn</h3>
-              <h3>Total: <span id="player-one-total"></span></h3>
-              <div class="player-one">
-              <h3>Round Total: <span id= "player-one-round-total"></span></h3>
-              <button type="button" class="item animated shake" id="roll-playerone"><img src="img/dice.png"></button>
-              <button type="button" id="hold-player-one" class="twentyone-buttons">Hold!</button>
-           <!-- <button type="reset" value="reload" class="btn btn-warning">Try again!</button> -->
-            </div>
-            </div>
+
+        <h2>Roll 21 or Fade Away...</h2>
+        <div class="item animated flash">
+        <p id="caution">"CAUTION: 1,3,5 Your Alive, 2,4,6 Time Tic Tic..."</p>
+      </div>
+      </div>
+        <div class="hide-label">
+          <label for="dice">Number of dice</label>
+          <select class="form-control" id="dice">
+          <option value="0">None</option>
+          <option value="1">1</option>
+          </select>
+          <button type="submit" class="btn btn-success">Lets play!</button>
+        </div>
+      </form>
+      <br>
+
+        <div id="reset">
+          <div class="initial-hide">
+            <h3>Player Turn</h3>
+            <h3>Total: <span id="player-one-total"></span></h3>
+            <div class="player-one">
+            <h3>Round Total: <span id= "player-one-round-total"></span></h3>
+            <button type="button" class="item animated shake" id="roll-playerone"><img src="img/dice.png"></button>
+            <button type="button" id="hold-player-one" class="twentyone-buttons">Hold!</button>
+         <!-- <button type="reset" value="reload" class="btn btn-warning">Try again!</button> -->
           </div>
+
+          </div>
+        </div>
+
           <br>
             <div class="initial-hide">
               <h3>Ghost A.I.</h3>
@@ -183,7 +190,7 @@
 
       <div class="item animated flash">
         <div class="escape-door">
-          <p>Escape Epicodus Now!</p>
+          <p class="item animated shake"> You're Free! Escape Epicodus Now!</p>
         </div>
         </div>
       </div>

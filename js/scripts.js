@@ -508,6 +508,14 @@ function startHangman() {
   }
 }
 // business logic for 21
+function startTwentyone() {
+  $(".wrapper").show();
+  $('html, body').animate({scrollTop:$(document).height()
+  }, 'slow');
+};
+
+
+
 var total = 0;
 var roundScore = 0;
 var playerOneTurn = true;
@@ -579,15 +587,21 @@ function hold(){
 function checkWinner(){
 if((playerOneScore>=21)){
   $(".result").text("Player One Winner" + "," + " " + "Click and Advance")
+  $(".initial-hide").hide();
+  $(".hide-21").hide();
 }
 else if (playerTwoScore>=21) {
   $(".result").text("Ghost Wins" + "," + " " + "Try-Again")
+  $(".initial-hide").hide();
+  $(".hide-21").hide();
 }
 }
 function myFunction() {
 
     // $("#game-input").show();
-    $(".initial-hide").hide();
+
+    $(".initial-hide").show();
+
     document.getElementById("game-input").reset();
     $("#reset").trigger("reset");
     playerOneScore=0;
@@ -597,6 +611,9 @@ function myFunction() {
 }
 // UI
 $(document).ready(function(){
+  $("#start-21").click(function(){
+    $("#twenty-one").show();
+  });
   $("form#game-input").submit(function(event) {
     event.preventDefault();
     var playerNumber = $("#player-number").val();
