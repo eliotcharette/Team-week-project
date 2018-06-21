@@ -270,6 +270,7 @@ button:focus {
 /* //twenty-one game// */
 
 #twenty-one {
+  display: none;
   text-align: center;
   font-family: "Source Sans Pro",sans-serif;
 }
@@ -474,6 +475,10 @@ canvas {
   font-size:1.6em;
   text-align:center;
   display:block;
+}
+
+#clue {
+  font-size: 45px;
 }
 
 @media (max-width: 767px) {

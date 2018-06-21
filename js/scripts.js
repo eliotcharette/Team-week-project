@@ -509,6 +509,14 @@ function startHangman() {
   }
 }
 // business logic for 21
+function startTwentyone() {
+  $(".wrapper").show();
+  $('html, body').animate({scrollTop:$(document).height()
+  }, 'slow');
+};
+
+
+
 var total = 0;
 var roundScore = 0;
 var playerOneTurn = true;
@@ -602,6 +610,9 @@ function myFunction() {
 }
 // UI
 $(document).ready(function(){
+  $("#start-21").click(function(){
+    $("#twenty-one").show();
+  });
   $("form#game-input").submit(function(event) {
     event.preventDefault();
     var playerNumber = $("#player-number").val();
