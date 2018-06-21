@@ -20,16 +20,16 @@ body {
   color: #FFF;
   font-family: "Source Sans Pro",sans-serif;
   background-color: black;
-  margin: 0;
-  padding: 0;
+  /* margin: 0;
+  padding: 0; */
 }
 
 h1 {
-  color: #FFF;
+  /* color: #FFF; */
   text-align: center;
   display: inline-block;
   padding: 5%;
-  font-family: "Source Sans Pro",sans-serif;
+  /* font-family: "Source Sans Pro",sans-serif; */
   font-weight: bolder;
   font-size: 7em;
   font-weight:200;
@@ -55,8 +55,9 @@ section {
   display: inline-block;
   font-size: 7em;
   color: #FFF;
-  font-family: "Source Sans Pro",sans-serif;
+  /* font-family: "Source Sans Pro",sans-serif; */
   text-decoration: none;
+  margin-bottom: 8%;
 }
 
 #start-button:hover {
@@ -74,9 +75,9 @@ button:focus {
   background-image: url(../img/narrative-bg.jpg);
   background-size: cover;
   background-repeat: no-repeat;
-  padding: 10%;
+  padding: 10% 10% 25% 10%;
   font-size: 2em;
-  font-family: "Source Sans Pro",sans-serif;
+  /* font-family: "Source Sans Pro",sans-serif; */
 }
 
 #countdown {
@@ -94,7 +95,7 @@ button:focus {
 
 .continue {
   float: right;
-  font-family:"Source Sans Pro",sans-serif;
+  /* font-family:"Source Sans Pro",sans-serif; */
   color: #00b3b4;
   font-weight: bolder;
 }
@@ -147,10 +148,12 @@ button:focus {
 
 #pc-area {
   position: absolute;
-  top: 250px;
+  top: 200px;
   right: 1100px;
   width: 300px;
   height: 100px;
+  /* font-family: "Source Sans Pro",sans-serif; */
+  font-size: 1.5em;
   background-color: rgba(255,255,255,0.2);
 }
 #clorox {
