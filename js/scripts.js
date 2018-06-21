@@ -205,7 +205,7 @@ function ticTacCheckWinCondition() {
       setTimeout(function(){
         $("#room-two").hide();
         $("#narrative-three").fadeIn(2000);
-      } , 2000);
+      } , 5000);
     } else if (p2Count === 3){
       ticTacGameOver = true;
       $("#tic-tac-toe-area").hide();
