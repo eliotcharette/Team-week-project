@@ -40,7 +40,8 @@ function clickClorox(){
 };
 // Set the date we're counting down to
 // var countDownDate = new Date("Sep 5, 2018 15:37:25").getTime();
-var countDownDate = new Date().getTime() + 360000;
+var gameTimer = 360000;
+var countDownDate = new Date().getTime() + gameTimer;
 // Update the count down every 1 second
 var x = setInterval(function() {
 
@@ -62,6 +63,9 @@ var x = setInterval(function() {
   if (distance < 0) {
     clearInterval(x);
     document.getElementById("countdown").innerHTML = "EXPIRED";
+    $('div').hide();
+    $('section').hide();
+    $("#time-expired").show();
   }
 }, 1000);
 
@@ -205,7 +209,7 @@ function ticTacCheckWinCondition() {
       setTimeout(function(){
         $("#room-two").hide();
         $("#narrative-three").fadeIn(2000);
-      } , 2000);
+      } , 5000);
     } else if (p2Count === 3){
       ticTacGameOver = true;
       $("#tic-tac-toe-area").hide();
