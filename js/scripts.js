@@ -9,7 +9,7 @@ function startGame() {
   }
   , 3000);
   $("#intro-photo").hide();
-  $("#narrative-one").fadeIn(2000);
+  $("#narrative-three").fadeIn(2000);
 };
 
 function toRoomOne() {
@@ -592,18 +592,22 @@ function hold(){
 }
 function checkWinner(){
 if((playerOneScore>=21)){
-  $(".result").text("Player One Winner" + "," + " " + "Click and Advance")
+  $(".result").text("Player One Winner" + "," + " " + "Click and Advance");
+  $(".result").show();
   $(".initial-hide").hide();
   $(".hide-21").hide();
 }
 else if (playerTwoScore>=21) {
-  $(".result").text("Ghost Wins" + "," + " " + "Try-Again")
+  $(".result").text("Ghost Wins" + "," + " " + "Try-Again");
+  $(".result").show();
   $(".initial-hide").hide();
   $(".hide-21").hide();
+  $("#21-try-again").show();
 }
 }
 function myFunction() {
-
+    $(".result").hide();
+    $("#21-try-again").hide();
     $(".initial-hide").show();
 
     document.getElementById("game-input").reset();
