@@ -1,208 +1,208 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Escape Room</title>
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/animate.css">
-    <link href="https://fonts.googleapis.com/css?family=IM+Fell+English+SC" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/styles.css">
-    <script src="js/jquery-3.3.1.js" charset="utf-8"></script>
-    <script src="js/scripts.js" charset="utf-8"></script>
-  </head>
-  <body>
-    <section id="intro-photo">
-      <div class="item animated flash">
-        <h1>Escape From Epicodus</h1>
+  <html>
+    <head>
+      <meta charset="utf-8">
+      <title>Escape Room</title>
+      <link rel="stylesheet" href="css/bootstrap.css">
+      <link rel="stylesheet" href="css/animate.css">
+      <link href="https://fonts.googleapis.com/css?family=IM+Fell+English+SC" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="css/styles.css">
+      <script src="js/jquery-3.3.1.js" charset="utf-8"></script>
+      <script src="js/scripts.js" charset="utf-8"></script>
+    </head>
+    <body>
+      <section id="intro-photo">
+        <div class="item animated flash">
+          <h1>Escape From Epicodus</h1>
+        </div>
+        <button onclick="startGame(event)" id="start-button">E</button>
+        <br>
+        <br>
+        <br>
+      </section>
+      <!-- ROOM ONE -->
+      <div class="narrative hide-area" id="narrative-one">
+        <p> The sound of a slamming door, you awaken in the Epicodus Computer Room, all alone.</p>
+        <p>Suddenly screeching sounds surrounds you.</p>
+        <p>It draws closer and closer to you.</p>
+        <span class="continue" onclick="toRoomOne()">Continue...</span>
       </div>
-      <button onclick="startGame(event)" id="start-button">E</button>
-      <br>
-      <br>
-      <br>
+      <div class="countdown-clock hide-area">
+        <p id="countdown"></p>
+      </div>
+      <div id="room-one" class="hide-area room">
+        <div class="row">
+          <div class="clickable" id="board" onclick="clickBoard()"></div>
+          <div class="clickable" id="pc" onclick="clickPC()"></div>
+          <div class="clickable hide-area" id="clorox" onclick="clickClorox()">
+          </div>
+          <div id="room-one-key" class="hide-area">
+            <img src="img/key.png" alt="key">
+            <p class="message">You found the spare key</p>
+          </div>
+          <img src="img/computer-resized.jpg">
+        </div>
+        <div id="password-img" class="hide-area">
+          <img class="item2 animated zoomIn" src="img/password-sm.jpg" alt="password image">
+        </div>
+        <div id="pc-area" class="hide-area">
+          <form id="form-wifi">
+            <label for="wifi">Enter Wifi Password</label>
+            <input type="text" id="wifi">
+          </form>
+          <div id="email" class="hide-area">
+            <img src="img/email.png" alt="email">
+          </div>
+        </div>
+      </div>
+      <!-- ROOM TWO -->
+      <div class="narrative hide-area" id="narrative-two">
+        <p>You unlocked the classroom door with the spare key and head out into the hallway.</p>
+        <p>The building seems to be totally empty, with no sign of whoever made the noises earlier.</p>
+        <p>With quickened steps, you head straight for the elevators.</p>
+        <span class="continue" onclick="toRoomTwo()">Continue...</span>
+      </div>
+      <div id="room-two" class="hide-area">
+        <img id="elevator" src="img/elevator-close.jpg">
+        <div id="ghost-casper" class="hide-area">
+          <div id="ghost-img">
+            <img id="casper-img" src="img/casper-2.png" alt="casper">
+          </div>
+          <div id="casper-message-box" class="message">
+            <span id="casper-message">I'm so bored. Will you play a game with me?</span>
+          </div>
+        </div>
+        <div id="answer-options" class="hide-area">
+          <span id="yes-box" class="message clickable" onclick="clickYes()">YES</span>
+          <span id="no-box" class="message clickable" onclick="clickNo()">NO!</span>
+        </div>
+        <div id="tic-tac-toe-area" class="hide-area">
+          <div class="row" id="row-1">
+            <div class="col-md-4 tic-tac" onClick="playTicTac(this.id)" id="1a"><img id="1apic" src="img/clear.png" alt="clear"></div>
+            <div class="col-md-4 tic-tac" onClick="playTicTac(this.id)" id="1b"><img id="1bpic" src="img/clear.png" alt="clear"></div>
+            <div class="col-md-4 tic-tac" onClick="playTicTac(this.id)" id="1c"><img id="1cpic" src="img/clear.png" alt="clear"></div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-4 tic-tac" onClick="playTicTac(this.id)" id="2a"><img id="2apic" src="img/clear.png" alt="clear"></div>
+            <div class="col-md-4 tic-tac" onClick="playTicTac(this.id)" id="2b"><img id="2bpic" src="img/clear.png" alt="clear"></div>
+            <div class="col-md-4 tic-tac" onClick="playTicTac(this.id)" id="2c"><img id="2cpic" src="img/clear.png" alt="clear"></div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-4 tic-tac" onClick="playTicTac(this.id)" id="3a"><img id="3apic" src="img/clear.png" alt="clear"></div>
+            <div class="col-md-4 tic-tac" onClick="playTicTac(this.id)" id="3b"><img id="3bpic" src="img/clear.png" alt="clear"></div>
+            <div class="col-md-4 tic-tac" onClick="playTicTac(this.id)" id="3c"><img id="3cpic" src="img/clear.png" alt="clear"></div>
+          </div>
+          <span id="tictactoe-message" class="message"></span>
+        </div>
+      </div>
+
+      <!-- Room Three -->
+      <div class="narrative hide-area" id="narrative-three">
+        <p>Welcome to room Three.</p>
+        <span class="continue" onclick="toRoomThree()">Continue...</span>
+      </div>
+
+    <section class="room-three hide-area">
+      <h2>Your Final Chance</h2>
+      <p>The clock is ticking, solve and survive, fail and forever remain...</p>
+      <button id="start-hangman" onclick="startHangman()" class="hangman-buttons">E</button>
     </section>
-    <!-- ROOM ONE -->
-    <div class="narrative hide-area" id="narrative-one">
-      <p> The sound of a slamming door, you awaken in the Epicodus Computer Room, all alone.</p>
-      <p>Suddenly screeching sounds surrounds you.</p>
-      <p>It draws closer and closer to you.</p>
-      <span class="continue" onclick="toRoomOne()">Continue...</span>
-    </div>
-    <div class="countdown-clock hide-area">
-      <p id="countdown"></p>
-    </div>
-    <div id="room-one" class="hide-area room">
-      <div class="row">
-        <div class="clickable" id="board" onclick="clickBoard()"></div>
-        <div class="clickable" id="pc" onclick="clickPC()"></div>
-        <div class="clickable hide-area" id="clorox" onclick="clickClorox()">
-        </div>
-        <div id="room-one-key" class="hide-area">
-          <img src="img/key.png" alt="key">
-          <p class="message">You found the spare key</p>
-        </div>
-        <img src="img/computer-resized.jpg">
-      </div>
-      <div id="password-img" class="hide-area">
-        <img class="item2 animated zoomIn" src="img/password-sm.jpg" alt="password image">
-      </div>
-      <div id="pc-area" class="hide-area">
-        <form id="form-wifi">
-          <label for="wifi">Enter Wifi Password</label>
-          <input type="text" id="wifi">
-        </form>
-        <div id="email" class="hide-area">
-          <img src="img/email.png" alt="email">
-        </div>
-      </div>
-    </div>
-    <!-- ROOM TWO -->
-    <div class="narrative hide-area" id="narrative-two">
-      <p>You unlocked the classroom door with the spare key and head out into the hallway.</p>
-      <p>The building seems to be totally empty, with no sign of whoever made the noises earlier.</p>
-      <p>With quickened steps, you head straight for the elevators.</p>
-      <span class="continue" onclick="toRoomTwo()">Continue...</span>
-    </div>
-    <div id="room-two" class="hide-area">
-      <img id="elevator" src="img/elevator-close.jpg">
-      <div id="ghost-casper" class="hide-area">
-        <div id="ghost-img">
-          <img id="casper-img" src="img/casper-2.png" alt="casper">
-        </div>
-        <div id="casper-message-box" class="message">
-          <span id="casper-message">I'm so bored. Will you play a game with me?</span>
-        </div>
-      </div>
-      <div id="answer-options" class="hide-area">
-        <span id="yes-box" class="message clickable" onclick="clickYes()">YES</span>
-        <span id="no-box" class="message clickable" onclick="clickNo()">NO!</span>
-      </div>
-      <div id="tic-tac-toe-area" class="hide-area">
-        <div class="row" id="row-1">
-          <div class="col-md-4 tic-tac" onClick="playTicTac(this.id)" id="1a"><img id="1apic" src="img/clear.png" alt="clear"></div>
-          <div class="col-md-4 tic-tac" onClick="playTicTac(this.id)" id="1b"><img id="1bpic" src="img/clear.png" alt="clear"></div>
-          <div class="col-md-4 tic-tac" onClick="playTicTac(this.id)" id="1c"><img id="1cpic" src="img/clear.png" alt="clear"></div>
-        </div>
-
-        <div class="row">
-          <div class="col-md-4 tic-tac" onClick="playTicTac(this.id)" id="2a"><img id="2apic" src="img/clear.png" alt="clear"></div>
-          <div class="col-md-4 tic-tac" onClick="playTicTac(this.id)" id="2b"><img id="2bpic" src="img/clear.png" alt="clear"></div>
-          <div class="col-md-4 tic-tac" onClick="playTicTac(this.id)" id="2c"><img id="2cpic" src="img/clear.png" alt="clear"></div>
-        </div>
-
-        <div class="row">
-          <div class="col-md-4 tic-tac" onClick="playTicTac(this.id)" id="3a"><img id="3apic" src="img/clear.png" alt="clear"></div>
-          <div class="col-md-4 tic-tac" onClick="playTicTac(this.id)" id="3b"><img id="3bpic" src="img/clear.png" alt="clear"></div>
-          <div class="col-md-4 tic-tac" onClick="playTicTac(this.id)" id="3c"><img id="3cpic" src="img/clear.png" alt="clear"></div>
-        </div>
-        <span id="tictactoe-message" class="message"></span>
-      </div>
-    </div>
-
-    <!-- Room Three -->
-    <div class="narrative hide-area" id="narrative-three">
-      <p>Welcome to room Three.</p>
-      <span class="continue" onclick="toRoomThree()">Continue...</span>
-    </div>
-
-  <section class="room-three hide-area">
-    <h2>Your Final Chance</h2>
-    <p>The clock is ticking, solve and survive, fail and forever remain...</p>
-    <button id="start-hangman" onclick="startHangman()" class="hangman-buttons">E</button>
-  </section>
-  <br>
-  <!-- //21 Dice Game// -->
-  <div id="twenty-one">
-    <form id="game-input">
-      <h2>Roll 21 or Fade Away...</h2>
-      <div class="item animated flash">
-      <p>"CAUTION: 1,3,5 Your Alive, 2,4 tic-tac,6 Time Tic Tic..."</p>
-    </div>
-      <div class="hide-label">
-        <label for="dice">Number of dice</label>
-        <select class="form-control" id="dice">
-        <option value="0">None</option>
-        <option value="1">1</option>
-        </select>
-        <button type="submit" class="btn btn-success">Lets play!</button>
-      </div>
-    </form>
     <br>
-
-      <div id="reset">
-        <div class="initial-hide">
-          <h3>Player Turn</h3>
-          <h3>Total: <span id="player-one-total"></span></h3>
-          <div class="player-one">
-          <h3>Round Total: <span id= "player-one-round-total"></span></h3>
-          <button type="button" id="roll-playerone"><img src="img/dice.png"></button>
-          <button type="button" id="hold-player-one" class="twentyone-buttons">Hold!</button>
-       <!-- <button type="reset" value="reload" class="btn btn-warning">Try again!</button> -->
+    <!-- //21 Dice Game// -->
+    <div id="twenty-one">
+      <form id="game-input">
+        <h2>Roll 21 or Fade Away...</h2>
+        <div class="item animated flash">
+        <p>"CAUTION: 1,3,5 Your Alive, 2,4 tic-tac,6 Time Tic Tic..."</p>
+      </div>
+        <div class="hide-label">
+          <label for="dice">Number of dice</label>
+          <select class="form-control" id="dice">
+          <option value="0">None</option>
+          <option value="1">1</option>
+          </select>
+          <button type="submit" class="btn btn-success">Lets play!</button>
         </div>
+      </form>
+      <br>
 
+        <div id="reset">
+          <div class="initial-hide">
+            <h3>Player Turn</h3>
+            <h3>Total: <span id="player-one-total"></span></h3>
+            <div class="player-one">
+            <h3>Round Total: <span id= "player-one-round-total"></span></h3>
+            <button type="button" id="roll-playerone"><img src="img/dice.png"></button>
+            <button type="button" id="hold-player-one" class="twentyone-buttons">Hold!</button>
+         <!-- <button type="reset" value="reload" class="btn btn-warning">Try again!</button> -->
+          </div>
+
+          </div>
         </div>
+        <br>
+          <div class="initial-hide">
+            <h3>Ghost A.I.</h3>
+            <h3>Total: <span id="player-two-total"></span></h3>
+          <div class="player-two">
+            <h3>Round Total: <span id= "player-two-round-total"></span></h3>
+            <button type="button" id="roll-playertwo"><img src="img/dice.png"></button>
+            <button type="button" id="hold-player-two" class="twentyone-buttons">Hold!</button>
+          </div>
+          </div>
+          <br>
+          <div class= "item animated shake">
+          <p><span class="result" onclick="startHangman()" ></span></p>
+        </div>
+          <br>
+          <input type="button" onclick="myFunction()" value="Try-Again" class="twentyone-buttons">
+    </div>
+          <br>
+      <!-- //Hangman Game// -->
+      <div class="wrapper">
+          <div id="buttons">
+          </div>
+          <br>
+          <br>
+          <br>
+          <br>
+          <p id="catagoryName"></p>
+          <div id="hold">
+          </div>
+          <p id="mylives"></p>
+          <p id="clue">Hang Loose or Hangman...</p>
+           <canvas id="stickman">This Text will show if the Browser does NOT support HTML5 Canvas tag</canvas>
+          <div class="container">
+            <button class="hangman-buttons" id="hint">Hint</button><button id="reset" class="hangman-buttons">Play again</button>
+            <br>
+            <!-- <br><button id="reset">Play again</button> -->
+          </div>
       </div>
       <br>
-        <div class="initial-hide">
-          <h3>Ghost A.I.</h3>
-          <h3>Total: <span id="player-two-total"></span></h3>
-        <div class="player-two">
-          <h3>Round Total: <span id= "player-two-round-total"></span></h3>
-          <button type="button" id="roll-playertwo"><img src="img/dice.png"></button>
-          <button type="button" id="hold-player-two" class="twentyone-buttons">Hold!</button>
+      <div class="hide">
+
+
+      <div class="item animated flash">
+        <div class="escape-door">
+          <p>Escape Epicodus Now!</p>
         </div>
         </div>
-        <br>
-        <div class= "item animated shake">
-        <p><span class="result" onclick="startHangman()" ></span></p>
       </div>
-        <br>
-        <input type="button" onclick="myFunction()" value="Try-Again" class="twentyone-buttons">
-  </div>
-        <br>
-    <!-- //Hangman Game// -->
-    <div class="wrapper">
-        <div id="buttons">
-        </div>
-        <br>
-        <br>
-        <br>
-        <br>
-        <p id="catagoryName"></p>
-        <div id="hold">
-        </div>
-        <p id="mylives"></p>
-        <p id="clue">Hang Loose or Hangman...</p>
-         <canvas id="stickman">This Text will show if the Browser does NOT support HTML5 Canvas tag</canvas>
-        <div class="container">
-          <button class="hangman-buttons" id="hint">Hint</button><button id="reset" class="hangman-buttons">Play again</button>
-          <br>
-          <!-- <br><button id="reset">Play again</button> -->
-        </div>
-    </div>
-    <br>
-    <div class="hide">
 
 
-    <div class="item animated flash">
-      <div class="escape-door">
-        <p>Escape Epicodus Now!</p>
+
+      <br>
+      <div class="hide-area" id="time-expired">
+        <img src="img/ghost-1.png" alt="ghost"><br>
+        <p class="message">Your time is up.  You're doomed to haunt this building for eternity.</p>
       </div>
+      <div class="icons">
+          <a href="https://github.com/sonekase/escape-room" class="fa fa-github"></a>
+        <footer><p id="end">&copy; 2018 Escape From Epicodus</p></footer>
       </div>
-    </div>
 
 
-
-    <br>
-    <div class="hide-area" id="time-expired">
-      <img src="img/ghost-1.png" alt="ghost"><br>
-      <p class="message">Your time is up.  You're doomed to haunt this building for eternity.</p>
-    </div>
-    <div class="icons">
-        <a href="https://github.com/sonekase/escape-room" class="fa fa-github"></a>
-      <footer><p id="end">&copy; 2018 Escape From Epicodus</p></footer>
-    </div>
-
-
-  </body>
-</html>
+    </body>
+  </html>
