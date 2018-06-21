@@ -24,14 +24,14 @@
     <!-- ROOM ONE -->
     <div class="narrative hide-area" id="narrative-one">
       <p> The sound of a slamming door, you awaken in the Epicodus Computer Room, all alone.</p>
-      <p>Suddenly screeching sounds surronds you.</p>
+      <p>Suddenly screeching sounds surrounds you.</p>
       <p>It draws closer and closer to you.</p>
       <span class="continue" onclick="toRoomOne()">Continue...</span>
     </div>
+    <div class="countdown-clock hide-area">
+      <p id="countdown"></p>
+    </div>
     <div id="room-one" class="hide-area room">
-      <div class="countdown-clock">
-        <p id="countdown"></p>
-      </div>
       <div class="row">
         <div class="clickable" id="board" onclick="clickBoard()"></div>
         <div class="clickable" id="pc" onclick="clickPC()"></div>
@@ -58,11 +58,13 @@
     </div>
     <!-- ROOM TWO -->
     <div class="narrative hide-area" id="narrative-two">
-      <p>Welcome to room TWO.</p>
+      <p>You unlocked the classroom door with the spare key and head out into the hallway.</p>
+      <p>The building seems to be totally empty, with no sign of whoever made the noises earlier.</p>
+      <p>With quickened steps, you head straight for the elevators.</p>
       <span class="continue" onclick="toRoomTwo()">Continue...</span>
     </div>
     <div id="room-two" class="hide-area">
-      <img src="img/elevator-close.jpg">
+      <img id="elevator" src="img/elevator-close.jpg">
       <div id="ghost-casper" class="hide-area">
         <div id="ghost-img">
           <img id="casper-img" src="img/casper-2.png" alt="casper">
@@ -93,11 +95,17 @@
           <div class="col-md-4 tic-tac" onClick="playTicTac(this.id)" id="3b"><img id="3bpic" src="img/clear.png" alt="clear"></div>
           <div class="col-md-4 tic-tac" onClick="playTicTac(this.id)" id="3c"><img id="3cpic" src="img/clear.png" alt="clear"></div>
         </div>
-        <span id="winner">Test</span>
+        <span id="tictactoe-message" class="message"></span>
       </div>
     </div>
 
-  <section class="room-three">
+    <!-- Room Three -->
+    <div class="narrative hide-area" id="narrative-three">
+      <p>Welcome to room Three.</p>
+      <span class="continue" onclick="toRoomThree()">Continue...</span>
+    </div>
+
+  <section class="room-three hide-area">
     <h2>Your Final Chance</h2>
     <p>The clock is ticking, solve and survive, fail and forever remain...</p>
     <button id="start-hangman" onclick="startHangman()" class="hangman-buttons">E</button>
@@ -175,7 +183,7 @@
     <br>
     <div class="hide">
 
-    
+
     <div class="item animated flash">
       <div class="escape-door">
         <p>Escape Epicodus Now!</p>
