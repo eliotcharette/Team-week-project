@@ -61,7 +61,7 @@ var x = setInterval(function() {
   document.getElementById("countdown").innerHTML = makeMeTwoDigits(minutes) + ":" + makeMeTwoDigits(seconds);
 
   // If the count down is finished, write some text
-  if (distance < 0 && escaped) {
+  if (distance < 0 && !escaped) {
     clearInterval(x);
     document.getElementById("countdown").innerHTML = "EXPIRED";
     $('div').hide();
@@ -131,7 +131,9 @@ function playTicTac(id) {
     ticTacCheckWinCondition();
     ticTacCounter += 1;
     if(ticTacPlayerTwo.name === "Computer" && ticTacCounter%2 === 0 && !ticTacGameOver){
-      ticTacComputerAI();
+      setTimeout(function(){
+        ticTacComputerAI();
+      },1000);
     };
   };
 };
@@ -257,7 +259,9 @@ function ticTacFirstTurn() {
   } else {
     $("#tictactoe-message").text(ticTacPlayerTwo.name + " Turn");
     if(ticTacPlayerTwo.name === "Computer"){
-      ticTacComputerAI();
+      setTimeout(function(){
+        ticTacComputerAI();
+      }, 1000);
     };
   };
 };

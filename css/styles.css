@@ -19,7 +19,7 @@
 body {
   color: #FFF;
   /* font-family: "Source Sans Pro",sans-serif; */
-  font-family: 'East Sea Dokdo', cursive;
+  font-family: "Source Sans Pro",sans-serif;
   /* font-family: 'Frijole', cursive; */
   /* font-family: 'Rye', cursive; */
   /* font-family: 'UnifrakturMaguntia', cursive; */
@@ -100,6 +100,7 @@ button:focus {
   /* font-family:"Source Sans Pro",sans-serif; */
   color: #00b3b4;
   font-weight: bolder;
+  font-size: 50px;
 }
 
 .continue:hover {
@@ -541,4 +542,14 @@ canvas {
 
   .icons a {
   color: #00b3b4;
+  }
+
+  #final{
+      width: 500px;
+      float: right;
+      margin-right: 10%;
+      margin-top: 15%;
+      padding: 5%;
+      border-radius: 15em;
+      display: inline-block;
   }
