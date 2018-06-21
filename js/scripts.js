@@ -1,5 +1,6 @@
 var slamDoor = new Audio("audio/close_door.mp3");
 var creakingDoor = new Audio("audio/squeaking_door.mp3");
+var escaped = false;
 
 function startGame() {
   slamDoor.play();
@@ -8,7 +9,7 @@ function startGame() {
   }
   , 3000);
   $("#intro-photo").hide();
-  $("#narrative-three").fadeIn(2000);
+  $("#narrative-one").fadeIn(2000);
   // startClock();
 };
 function toRoomOne() {
@@ -40,7 +41,7 @@ function clickClorox(){
 };
 // Set the date we're counting down to
 // var countDownDate = new Date("Sep 5, 2018 15:37:25").getTime();
-var gameTimer = 360000;
+var gameTimer = 300000;
 var countDownDate = new Date().getTime() + gameTimer;
 // Update the count down every 1 second
 var x = setInterval(function() {
@@ -60,7 +61,7 @@ var x = setInterval(function() {
   document.getElementById("countdown").innerHTML = makeMeTwoDigits(minutes) + ":" + makeMeTwoDigits(seconds);
 
   // If the count down is finished, write some text
-  if (distance < 0) {
+  if (distance < 0 && escaped) {
     clearInterval(x);
     document.getElementById("countdown").innerHTML = "EXPIRED";
     $('div').hide();
@@ -271,9 +272,11 @@ function toRoomThree() {
 //Hangman Game
 // window.onload = function () {
 function startHangman() {
+  $(".twentyone-buttons").hide();
+  $(".result").hide();
   $(".wrapper").show();
-  $('html, body').animate({scrollTop:$(document).height()
-  }, 'slow');
+  // $('html, body').animate({scrollTop:$(document).height()
+  // }, 'slow');
 
   var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
         'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
@@ -356,7 +359,12 @@ function startHangman() {
     for (var i = 0; i < geusses.length; i++) {
       if (counter + space === geusses.length) {
         showLives.innerHTML = "You Win!";
-        $(".hide").show();
+        escaped = true;
+        $(".countdown-clock").hide();
+        setTimeout(function(){
+          $(".hide").show();
+          $(".wrapper").hide();
+        }, 3000);
       }
     }
   }
@@ -613,6 +621,7 @@ function myFunction() {
 $(document).ready(function(){
   $("#start-21").click(function(){
     $("#twenty-one").show();
+    $(".room-three").hide();
   });
   $("form#game-input").submit(function(event) {
     event.preventDefault();
