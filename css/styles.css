@@ -18,23 +18,14 @@
 
 body {
   color: #FFF;
-  /* font-family: "Source Sans Pro",sans-serif; */
   font-family: "Source Sans Pro",sans-serif;
-  /* font-family: 'Frijole', cursive; */
-  /* font-family: 'Rye', cursive; */
-  /* font-family: 'UnifrakturMaguntia', cursive; */
-  /* font-family: 'Sonsie One', cursive; */
   background-color: black;
-  /* margin: 0;
-  padding: 0; */
 }
 
 h1 {
-  /* color: #FFF; */
   text-align: center;
   display: inline-block;
   padding: 17% 17% 5% 17%;
-  /* font-family: "Source Sans Pro",sans-serif; */
   font-weight: bolder;
   font-size: 12em;
   font-weight:200;
@@ -57,7 +48,6 @@ h1 {
   display: inline-block;
   font-size: 7em;
   color: #FFF;
-  /* font-family: "Source Sans Pro",sans-serif; */
   text-decoration: none;
   margin-bottom: 8%;
 }
@@ -79,7 +69,6 @@ button:focus {
   background-repeat: no-repeat;
   padding: 10% 10% 40% 10%;
   font-size: 2em;
-  /* font-family: "Source Sans Pro",sans-serif; */
 }
 
 #countdown {
@@ -97,7 +86,6 @@ button:focus {
 
 .continue {
   float: right;
-  /* font-family:"Source Sans Pro",sans-serif; */
   color: #00b3b4;
   font-weight: bolder;
   font-size: 50px;
@@ -139,7 +127,6 @@ button:focus {
   right: 690px;
   width: 170px;
   height: 290px;
-  /* border: 2px solid blue; */
 }
 
 #pc {
@@ -148,7 +135,6 @@ button:focus {
   right: 1170px;
   width: 160px;
   height: 140px;
-  /* border: 2px solid blue; */
 }
 
 #pc-area {
@@ -157,7 +143,6 @@ button:focus {
   right: 1100px;
   width: 300px;
   height: 100px;
-  /* font-family: "Source Sans Pro",sans-serif; */
   font-size: 1.5em;
   background-color: rgba(255,255,255,0.2);
 }
@@ -167,7 +152,6 @@ button:focus {
   right:1170px;
   width: 350px;
   height: 250px;
-  /* border: 2px solid blue; */
 }
 
 #room-one-key {
@@ -237,7 +221,6 @@ button:focus {
   height: 100%;
   width: 100%;
   height: 100vh;
-  /* display: table; */
   background-size: cover;
   vertical-align: bottom;
   font-size: 30px;
@@ -301,7 +284,6 @@ button:focus {
 
 #roll-playertwo {
   border: 1px solid rgba(0,0,0,0.1);
-  /* background-color: black; */
   background-color: rgba(0,0,0,0.1);
   display: inline-block;
   border-radius: 7em;
@@ -332,17 +314,9 @@ button:focus {
 }
 
 .result {
-  font-family: "Source Sans Pro",sans-serif;
   font-size: 50px;
   color: #00b3b4;
 }
-
-.result:hover {
-  color: #fff;
-}
-
-
-
 
 /* Variabes */
 $orange: #ffa600;
@@ -402,7 +376,6 @@ $base-color:$green ;
 .wrapper {
   display: none;
   font-family: "Source Sans Pro",sans-serif;
-  /* font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; */
   height:100%;
   text-align:center;
   font-size:22px;
@@ -436,12 +409,6 @@ canvas {
   cursor:pointer;
   @include corners(5px);
   border: solid 1px $white;
-
-    /* &:hover{
-      background:$base-color;
-      border: solid 1px $white; */
-      /* color:$white; */
-    /* } */
 }
 
 #alphabet li:hover {
@@ -512,7 +479,6 @@ canvas {
 
   .escape-door p {
     font-family: 10em;
-    color: #FFF;
   }
 
   .escape-door p:hover {
@@ -528,15 +494,12 @@ canvas {
   #end {
   font-size: 12px;
   text-align: center;
-  color: #FFF;
-  font-family: "Source Sans Pro",sans-serif;
 }
 
   .icons {
   vertical-align: bottom;
   text-align: center;
   font-size: 35px;
-  color: #FFF;
   padding: 3em;
   }
 
