@@ -8,7 +8,7 @@ function startGame() {
   }
   , 3000);
   $("#intro-photo").hide();
-  $("#narrative-three").fadeIn(2000);
+  $("#narrative-one").fadeIn(2000);
   // startClock();
 };
 function toRoomOne() {
