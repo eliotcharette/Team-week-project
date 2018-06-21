@@ -18,7 +18,12 @@
 
 body {
   color: #FFF;
-  font-family: "Source Sans Pro",sans-serif;
+  /* font-family: "Source Sans Pro",sans-serif; */
+  font-family: 'East Sea Dokdo', cursive;
+  /* font-family: 'Frijole', cursive; */
+  /* font-family: 'Rye', cursive; */
+  /* font-family: 'UnifrakturMaguntia', cursive; */
+  /* font-family: 'Sonsie One', cursive; */
   background-color: black;
   /* margin: 0;
   padding: 0; */
@@ -28,19 +33,16 @@ h1 {
   /* color: #FFF; */
   text-align: center;
   display: inline-block;
-  padding: 17%;
+  padding: 17% 17% 5% 17%;
   /* font-family: "Source Sans Pro",sans-serif; */
   font-weight: bolder;
-  font-size: 7em;
+  font-size: 12em;
   font-weight:200;
 }
 
 #intro-photo {
   background-image: url("../img/escape-2-resized.jpg");
   background-size: cover;
-}
-
-section {
   text-align: center;
 }
 

@@ -6,21 +6,19 @@
       <link rel="stylesheet" href="css/bootstrap.css">
       <link rel="stylesheet" href="css/animate.css">
       <link href="https://fonts.googleapis.com/css?family=IM+Fell+English+SC" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=East+Sea+Dokdo|Frijole|Rye|Sonsie+One|UnifrakturMaguntia" rel="stylesheet">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
       <link rel="stylesheet" href="css/styles.css">
       <script src="js/jquery-3.3.1.js" charset="utf-8"></script>
       <script src="js/scripts.js" charset="utf-8"></script>
     </head>
     <body>
-      <section id="intro-photo">
+      <div id="intro-photo">
         <div class="item animated flash">
           <h1>Escape From Epicodus</h1>
         </div>
-        <button onclick="startGame(event)" id="start-button">E</button>
-        <br>
-        <br>
-        <br>
-      </section>
+        <button onclick="startGame()" id="start-button">E</button>
+      </div>
       <!-- ROOM ONE -->
       <div class="narrative hide-area" id="narrative-one">
         <p> The sound of a slamming door, you awaken in the Epicodus Computer Room, all alone.</p>
@@ -105,7 +103,7 @@
         <span class="continue" onclick="toRoomThree()">Continue...</span>
       </div>
 
-      <section class="hide-area room room-three">
+      <div class="hide-area room room-three">
           <h2>Your Final Chance</h2>
           <p>The clock is ticking, solve and survive, fail and forever remain...</p>
           <button id="start-hangman" onclick="startHangman()" class="hangman-buttons">E</button>
@@ -179,7 +177,7 @@
             </div>
         </div>
         <br>
-      </section>
+      </div>
 
       <div class="hide">
 

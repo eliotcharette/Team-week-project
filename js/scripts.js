@@ -1,14 +1,14 @@
 var slamDoor = new Audio("audio/close_door.mp3");
 var creakingDoor = new Audio("audio/squeaking_door.mp3");
 
-function startGame(event) {
+function startGame() {
   slamDoor.play();
   setTimeout(function() {
     creakingDoor.play();
   }
   , 3000);
-  $("section").hide();
-  $("#narrative-one").fadeIn(2000);
+  $("#intro-photo").hide();
+  $("#narrative-three").fadeIn(2000);
   // startClock();
 };
 function toRoomOne() {
@@ -64,7 +64,6 @@ var x = setInterval(function() {
     clearInterval(x);
     document.getElementById("countdown").innerHTML = "EXPIRED";
     $('div').hide();
-    $('section').hide();
     $("#time-expired").show();
   }
 }, 1000);
@@ -588,7 +587,7 @@ else if (playerTwoScore>=21) {
 function myFunction() {
 
     // $("#game-input").show();
-    // $(".initial-hide").hide();
+    $(".initial-hide").hide();
     document.getElementById("game-input").reset();
     $("#reset").trigger("reset");
     playerOneScore=0;
