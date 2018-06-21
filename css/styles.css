@@ -28,7 +28,7 @@ h1 {
   /* color: #FFF; */
   text-align: center;
   display: inline-block;
-  padding: 5%;
+  padding: 17%;
   /* font-family: "Source Sans Pro",sans-serif; */
   font-weight: bolder;
   font-size: 7em;
@@ -75,7 +75,7 @@ button:focus {
   background-image: url(../img/narrative-bg.jpg);
   background-size: cover;
   background-repeat: no-repeat;
-  padding: 10% 10% 25% 10%;
+  padding: 10% 10% 40% 10%;
   font-size: 2em;
   /* font-family: "Source Sans Pro",sans-serif; */
 }
@@ -112,6 +112,8 @@ button:focus {
 
 .room {
   text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #room-one {
