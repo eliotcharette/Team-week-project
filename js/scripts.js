@@ -1,5 +1,6 @@
 var slamDoor = new Audio("audio/close_door.mp3");
 var creakingDoor = new Audio("audio/squeaking_door.mp3");
+var tada = new Audio("audio/tada.mp3");
 var escaped = false;
 
 function startGame() {
@@ -9,7 +10,7 @@ function startGame() {
   }
   , 3000);
   $("#intro-photo").hide();
-  $("#narrative-three").fadeIn(2000);
+  $("#narrative-one").fadeIn(2000);
 };
 
 function toRoomOne() {
@@ -363,6 +364,7 @@ function startHangman() {
         setTimeout(function(){
           $(".hide").show();
           $(".wrapper").hide();
+          tada.play();
         }, 3000);
       }
     }
@@ -663,6 +665,7 @@ $(document).ready(function(){
     } else {
       $("#wifi").val("");
     };
+    $("#form-wifi").trigger("reset");
     return false;
   });
 });
