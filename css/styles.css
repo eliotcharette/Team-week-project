@@ -236,7 +236,7 @@ button:focus {
   height: 100%;
   width: 100%;
   height: 100vh;
-  display: table;
+  /* display: table; */
   background-size: cover;
   vertical-align: bottom;
   font-size: 30px;
