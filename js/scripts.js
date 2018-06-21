@@ -10,8 +10,8 @@ function startGame() {
   , 3000);
   $("#intro-photo").hide();
   $("#narrative-one").fadeIn(2000);
-  // startClock();
 };
+
 function toRoomOne() {
   $("#narrative-one").hide();
   $("#room-one").fadeIn(2000);
@@ -23,11 +23,8 @@ function clickBoard(){
 };
 
 function clickPC(){
-  // $("#rm-one-message").show();
   $("#password-img").hide();
   $("#pc-area").show();
-  // $('#rm-one-message').text("Enter Wifi Password:");
-  // $('html, body').animate({scrollTop:$(document).height()}, 'fast');
 };
 
 function clickClorox(){
@@ -39,8 +36,7 @@ function clickClorox(){
     $("#narrative-two").fadeIn(2000);
   } , 3000);
 };
-// Set the date we're counting down to
-// var countDownDate = new Date("Sep 5, 2018 15:37:25").getTime();
+// Set the game timer
 var gameTimer = 300000;
 var countDownDate = new Date().getTime() + gameTimer;
 // Update the count down every 1 second
@@ -52,15 +48,12 @@ var x = setInterval(function() {
   // Find the distance between now an the count down date
   var distance = countDownDate - now;
 
-  // Time calculations for days, hours, minutes and seconds
-  // var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  // var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  // Time calculations for minutes and seconds
   var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
   document.getElementById("countdown").innerHTML = makeMeTwoDigits(minutes) + ":" + makeMeTwoDigits(seconds);
 
-  // If the count down is finished, write some text
   if (distance < 0 && !escaped) {
     clearInterval(x);
     document.getElementById("countdown").innerHTML = "EXPIRED";
@@ -114,13 +107,14 @@ var ticTacBoard = ['1a', '2a', '3a', '1b', '2b', '3b', '1c', '2c', '3c'];
 var ticTacPlayArea = ['1a', '2a', '3a', '1b', '2b', '3b', '1c', '2c', '3c'];
 var ticTacGameOver = false;
 
+// change imgage on tic tac board
 function ticTacChangeImage(id, img){
   var location = id+"pic";
   document.getElementById(location).src = img;
 };
 
+// check id of element for tic tac toe play area and change icon to match player
 function playTicTac(id) {
-  debugger;
   if(ticTacPlayArea.indexOf(id) >= 0){
     ticTacPlayArea.splice(ticTacPlayArea.indexOf(id), 1);
     if (ticTacCounter%2){
@@ -150,6 +144,7 @@ function ticTacPlayerTwoTurn(id) {
   $("#tictactoe-message").text(ticTacPlayerOne.name + " Turn");
 };
 
+// AI will pick from available spots on board and choose move base on board layout
 function ticTacComputerAI() {
   var id = ticTacPlayArea[ticTacGetRandomInt(ticTacPlayArea.length)-1];
   var priority = 0;
@@ -231,6 +226,7 @@ function ticTacCheckWinCondition() {
   };
 };
 
+// reset the tic tac toe game to default
 function resetTicTac(){
   ticTacCounter = 0;
   ticTacGameOver = false;
@@ -248,10 +244,12 @@ function resetTicTac(){
 
 }
 
+// return a random number from 1 to max
 function ticTacGetRandomInt(max) {
   return Math.floor(Math.random() * Math.floor(max)+1);
 };
 
+// decide who go first
 function ticTacFirstTurn() {
   ticTacCounter = ticTacGetRandomInt(2);
   if(ticTacCounter === 1){
@@ -274,13 +272,10 @@ function toRoomThree() {
 };
 
 //Hangman Game
-// window.onload = function () {
 function startHangman() {
   $(".twentyone-buttons").hide();
   $(".result").hide();
   $(".wrapper").show();
-  // $('html, body').animate({scrollTop:$(document).height()
-  // }, 'slow');
 
   var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
         'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
@@ -519,7 +514,7 @@ function startHangman() {
     play();
   }
 }
-// business logic for 21
+// business logic for 21 dice game
 function startTwentyone() {
   $(".wrapper").show();
   $('html, body').animate({scrollTop:$(document).height()
@@ -576,7 +571,6 @@ function changeTurns(){
     console.log("Computer Roll: " + total);
     if (total%2===0){
       total=0;
-      // changeTurns();
       $("#player-two-total").text(playerTwoScore);
       $("#player-two-round-total").text(roundScore);
       break;
@@ -609,8 +603,6 @@ else if (playerTwoScore>=21) {
 }
 }
 function myFunction() {
-
-    // $("#game-input").show();
 
     $(".initial-hide").show();
 

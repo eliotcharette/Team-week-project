@@ -508,10 +508,7 @@ canvas {
   }
 
   #final{
-      width: 500px;
-      float: right;
-      margin-right: 10%;
-      margin-top: 15%;
+      width: 700px;
       padding: 5%;
       border-radius: 15em;
       display: inline-block;
